@@ -59,6 +59,7 @@ class MyAdapter(private val dataSet: ArrayList<card>): RecyclerView.Adapter<Recy
             binding.mainViewTitle.text = data.main_view_title
             binding.mainViewPlace.text = data.main_view_place
 
+            // 터치했을 때
             binding.mainViewLayout.setOnClickListener {
                 Snackbar.make(it, "Item $layoutPosition touched!", Snackbar.LENGTH_SHORT).show()
                 //setData(layoutPosition)
