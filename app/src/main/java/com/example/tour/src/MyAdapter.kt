@@ -48,9 +48,8 @@ class MyAdapter(private val dataSet: ArrayList<card>): RecyclerView.Adapter<Recy
 //        return if (position == 0) TYPE_HEADER else TYPE_ITEM
         return TYPE_ITEM
     }
-    override fun getItemCount(): Int {
-        return dataSet.size
-    }
+    override fun getItemCount(): Int = dataSet.size
+
 
     inner class ViewHolder(private val binding: FragmentRecycleMainBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: card) {

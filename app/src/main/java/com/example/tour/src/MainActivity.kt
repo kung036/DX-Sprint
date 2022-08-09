@@ -39,6 +39,29 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         // 처음 네비게이션바 화면
         supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainFragment()).commitAllowingStateLoss()
         // 네비게이션바 설정
+//        val onBottomNavigationSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener{ item ->
+//                when (item.itemId) {
+//                    R.id.main_btn_home -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.framelaout_container, MainFragment()).commit()
+//                    }
+//                    R.id.main_btn_crew -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.framelaout_container, TestFragment()).commit()
+//                    }
+//                    R.id.main_btn_find -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.framelaout_container, MainFragment()).commit()
+//                    }
+//                    R.id.main_btn_mypage -> {
+//                        supportFragmentManager.beginTransaction()
+//                            .replace(R.id.framelaout_container, MainFragment()).commit()
+//                    }
+//                }
+//            true
+//        }
+//        binding.mainNevi.setOnItemSelectedListener(onBottomNavigationSelectedListener)
+
         binding.mainNevi.run {
             setOnItemSelectedListener {
                 when (it.itemId) {
@@ -68,7 +91,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         Log.d("print findDate", findDate)
 //        RetrofitObject.getApiService().getInfo("json", findDate).enqueue(object : Callback<VaccineBody> {
 //        RetrofitObject.getApiService().getInfo("json").enqueue(object : Callback<VaccineBody> {
-            RetrofitObject.getApiService().getInfo(20, 1, findDate).enqueue(object : Callback<VaccineBody>{
+//        RetrofitObject.getApiService().getInfo("json", 1, findDate).enqueue(object : Callback<VaccineBody>{
+        RetrofitObject.getApiService().getInfo("json").enqueue(object : Callback<VaccineBody>{
             // api 호출 성공시
             override fun onResponse(call: Call<VaccineBody>, response: Response<VaccineBody>) {
 //                setResponseText(response.code(), response.body())
@@ -94,11 +118,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 if(body == null){
                     "api body가 비어있습니다."
                 }else{
-                    if(body.data.toString() == "[]"){
-                        "api호출은 성공했으나 해당 날짜에 데이터가 없습니다."
-                    }else{
-                        Log.d("shin", body.toString())
-                    }
+//                    if(body.data.toString() == "[]"){
+//                        "api호출은 성공했으나 해당 날짜에 데이터가 없습니다."
+//                    }else{
+//                        Log.d("shin", body.toString())
+//                    }
                 }
             }
             400 -> {

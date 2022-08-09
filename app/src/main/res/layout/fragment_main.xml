@@ -32,7 +32,6 @@
 
     <!--  날짜시간 설정바  -->
 
-    <!--  리사이클링 뷰  -->
 
     <TextView
         android:id="@+id/main_text_setting"
@@ -45,7 +44,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <ImageView
+    <ImageButton
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginEnd="20dp"
@@ -54,6 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+    <!--  리사이클링 뷰  -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_view_festival"
         android:layout_width="match_parent"

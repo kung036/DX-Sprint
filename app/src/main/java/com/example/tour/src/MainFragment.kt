@@ -24,6 +24,8 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind
     R.layout.fragment_main){
     private val dataSet = arrayListOf<card>()
     private lateinit var rvAdapter: MyAdapter
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 //        binding = FragmentMainBinding.inflate(layoutInflater)
