@@ -121,10 +121,11 @@ class TestFragment : Fragment() {
                     var day:String? = obj.getString("USAGE_DAY") // 운영기간
                     var time:String? = obj.getString("USAGE_DAY_WEEK_AND_TIME") // 이용요일 및 시간
                     var money:String? = obj.getString("USAGE_AMOUNT") // 이용요금
-                    var image:String? = obj.getString("MAIN_IMG_NORMAL") // 이미지
+                    var image:String? = obj.getString("MAIN_IMG_NORMAL") // 이미지 URL
                     var content:String? = obj.getString("ITEMCNTNTS").trim().replace("\n\n","\n") // 상세내용
                     var facility:String? = obj.getString("MIDDLE_SIZE_RM1") // 편의시설
 
+                    // 데이터 추가하기
                     binding.textviewResponse.append("$i >> title : $title\n" +
                             "place : $place\n" +
                             "address : $address\n" +

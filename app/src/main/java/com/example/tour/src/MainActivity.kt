@@ -34,7 +34,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         setContentView(binding.root)
 
         // API 호출
-        getVaccineStatus()
+//        getVaccineStatus()
 
         // 처음 네비게이션바 화면
         supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainFragment()).commitAllowingStateLoss()

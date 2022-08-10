@@ -1,6 +1,7 @@
 package com.example.tour.src
 
 
+import android.graphics.Bitmap
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import com.example.tour.R
 //import com.example.tour.databinding.ItemHeaderBinding
 import com.example.tour.databinding.FragmentRecycleMainBinding
 import com.google.android.material.snackbar.Snackbar
+import java.net.URL
 import java.util.*
 import kotlin.collections.ArrayList
 //import com.example.tour.src.MyAdapter.HeaderViewHolder
@@ -53,7 +55,14 @@ class MyAdapter(private val dataSet: ArrayList<card>): RecyclerView.Adapter<Recy
 
     inner class ViewHolder(private val binding: FragmentRecycleMainBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: card) {
-            binding.mainViewImage.setImageResource(data.main_view_image)
+            // 이미지 URL을 Bitmap으로 변경
+            var image_task: ImageURLClass = ImageURLClass()
+            image_task = ImageURLClass().apply {
+                url = URL(data.main_view_image)
+            }
+            var bitmap: Bitmap = image_task.execute().get()
+
+            binding.mainViewImage.setImageBitmap(bitmap) // String 이미지
             binding.mainViewDate.text = data.main_view_date
             binding.mainViewTitle.text = data.main_view_title
             binding.mainViewPlace.text = data.main_view_place
