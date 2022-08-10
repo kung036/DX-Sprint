@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".src.DetailFragment" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/detail_imageButton_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#00000000"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icons8_back_50" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="10dp"
+                android:text="상세 페이지"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/detail_image_vaner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/festival_image" />
+            <ImageButton
+                android:layout_width="305dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="170dp"
+                android:background="@drawable/button_round_dark"
+                android:paddingTop="30dp" />
+            <TextView
+                android:id="@+id/detail_text_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="API 제목"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="175dp"
+                android:layout_marginLeft="65dp"/>
+            <TextView
+                android:id="@+id/detail_text_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="295dp"
+                android:layout_marginTop="220dp"
+                android:text="API 주요장소"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp">
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icons8_detail_58"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginTop="22dp"
+                    android:text="상세정보"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:paddingLeft="5dip"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detail_text_content"
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_round"
+                android:gravity="top|left"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="API 상세내용"
+                android:textSize="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icons8_date_67"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginTop="22dp"
+                    android:text="날짜 및 이용시간"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:paddingLeft="5dip"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detail_text_date"
+                android:layout_width="350dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_round"
+                android:gravity="top|left"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="API 날짜 및 이용시간"
+                android:textSize="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icons8_address_50"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginTop="22dp"
+                    android:text="주소"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:paddingLeft="5dip"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detail_text_address"
+                android:layout_width="350dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_round"
+                android:gravity="top|left"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="API 주소"
+                android:textSize="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icons8_map_64"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginTop="22dp"
+                    android:text="지도"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:paddingLeft="5dip"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_round"
+                android:gravity="top|left"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="API Kakao map"
+                android:textSize="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icons8_won_64"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginTop="22dp"
+                    android:text="이용요금"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:paddingLeft="5dip"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detail_text_money"
+                android:layout_width="350dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_round"
+                android:gravity="top|left"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="API 이용요금"
+                android:textSize="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icons8_call_80"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginTop="22dp"
+                    android:text="연락처"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:paddingLeft="5dip"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detail_text_phonenumber"
+                android:layout_width="350dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_round"
+                android:gravity="top|left"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="API 연락처"
+                android:textSize="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icons8_external_link_80"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginTop="22dp"
+                    android:text="홈페이지(url)"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:paddingLeft="5dip"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detail_text_homepageURL"
+                android:layout_width="350dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_round"
+                android:gravity="top|left"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="API url"
+                android:textSize="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/icons8_disable_64"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="20dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginTop="22dp"
+                    android:text="편의시설"
+                    android:textSize="13dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+                    android:paddingLeft="5dip"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/detail_text_facility"
+                android:layout_width="350dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_round"
+                android:gravity="top|left"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:text="API 편의시설"
+                android:textSize="10dp" />
+    </ScrollView>
+</LinearLayout>

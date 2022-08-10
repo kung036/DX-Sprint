@@ -27,6 +27,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 //private lateinit var binding: ActivityMainBinding
+var data: CardClass? = null
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,7 +63,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 //        }
 //        binding.mainNevi.setOnItemSelectedListener(onBottomNavigationSelectedListener)
 
+
         binding.mainNevi.run {
+            // API 받아오기
+//            data = intent.getSerializableExtra("data") as card
+//            if(data != null) {
+//                supportFragmentManager.beginTransaction()
+//                    .replace(R.id.framelaout_container, TestFragment()).commit()
+//            }
+
             setOnItemSelectedListener {
                 when (it.itemId) {
                     R.id.main_btn_home -> {

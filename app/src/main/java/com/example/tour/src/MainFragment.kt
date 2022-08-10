@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -33,7 +34,8 @@ import java.io.InputStreamReader
 
 //data class card (val main_view_image: Int, val main_view_date: String, val main_view_title: String, val main_view_place: String)
 //data class card (val main_view_image: Bitmap?, val main_view_date: String?, val main_view_title: String?, val main_view_place: String?)
-data class card (val main_view_image: String?, val main_view_date: String?, val main_view_title: String?, val main_view_place: String?)
+
+//data class card (val main_view_image: String?, val main_view_date: String?, val main_view_title: String?, val main_view_place: String?, val item:JSONObject)
 
 private lateinit var binding: FragmentMainBinding
 private lateinit var binding2: FragmentRecycleMainBinding
@@ -43,7 +45,7 @@ var Test:JSONArray? = null
 class MainFragment : Fragment() {
 //class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind,
 //    R.layout.fragment_main){
-    private val dataSet = arrayListOf<card>()
+    private val dataSet = arrayListOf<CardClass>()
     private lateinit var rvAdapter: MyAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,21 +66,25 @@ class MainFragment : Fragment() {
         mainActivity = context as MainActivity
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         // 리사이클러 뷰
         addData() // 데이터추가(잠시 주석)
 
-        rvAdapter = MyAdapter(dataSet)
+        rvAdapter = MyAdapter(dataSet, requireContext(), mainActivity)
+//        rvAdapter = MyAdapter(dataSet)
         binding.mainViewFestival.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.mainViewFestival.adapter = rvAdapter
         val itemTouchCallback = object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN, ItemTouchHelper.LEFT
-        ){
-            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
+        ) {
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
                 val fromPos: Int = viewHolder.adapterPosition
                 val toPos: Int = target.adapterPosition
                 rvAdapter.swapData(fromPos, toPos)
@@ -92,10 +98,9 @@ class MainFragment : Fragment() {
         }
         ItemTouchHelper(itemTouchCallback).attachToRecyclerView(binding.mainViewFestival)
     }
-
     // 네트워크를 이용할 때는 쓰레드를 사용해서 접근해야 함(JSON 가져오기)
     inner class NetworkThread: Thread() {
-        var key2:String = ""
+//        var key2:String = ""
 
         override fun run() {
             // 접속할 페이지 주소: Site
@@ -103,7 +108,8 @@ class MainFragment : Fragment() {
             var key = "serviceKey=iOsSg7SsQnn9oHGqbJo2A73DilcpwmIyKVrnq0puly4WPZgmww7UzNhpFisZn32fvFS2dCXuXE9kiu9I4L0kgg%3D%3D"
             var and = "&"
             var resultType = "resultType=json"
-            var site = base_url + key + and + resultType
+            var count = "numOfRows=30"
+            var site = base_url + key + and + resultType + and + count
             var url = URL(site)
             var connect = url.openConnection()
             var input = connect.getInputStream()
@@ -141,6 +147,16 @@ class MainFragment : Fragment() {
                     var day: String? = obj.getString("USAGE_DAY") // 운영기간
                     var title: String? = obj.getString("TITLE") // 축제 제목
                     var place: String? = obj.getString("MAIN_PLACE") // 장소
+
+                    var address:String? = obj.getString("ADDR1") // 주소
+                    var phoneNumber:String? = obj.getString("CNTCT_TEL") // 연락처
+                    var homepageURL:String? = obj.getString("HOMEPAGE_URL") // 홈페이지
+                    var traffic:String? = obj.getString("TRFC_INFO") // 교통정보
+                    var time:String? = obj.getString("USAGE_DAY_WEEK_AND_TIME") // 이용요일 및 시간
+                    var money:String? = obj.getString("USAGE_AMOUNT") // 이용요금
+                    var content:String? = obj.getString("ITEMCNTNTS").trim().replace("\n\n","\n") // 상세내용
+                    var facility:String? = obj.getString("MIDDLE_SIZE_RM1") // 편의시설
+
                     if(day == "") day = obj.getString("USAGE_DAY_WEEK_AND_TIME") // 이용요일 및 시간
 //                    Log.d("shin", "image : $image\n" +
 //                            "day : $day\n" +
@@ -148,11 +164,22 @@ class MainFragment : Fragment() {
 //                            "place : $place\n")
 
                     dataSet.add(
-                        card(
+                        CardClass(
                             image,
                             day,
                             title,
-                            place+" !!what"
+                            place,
+
+                            address,
+                            phoneNumber,
+                            homepageURL,
+                            traffic,
+                            time,
+                            money,
+                            content,
+                            facility,
+
+                            obj
                         )
                     )
                 }
@@ -164,6 +191,14 @@ class MainFragment : Fragment() {
         var thread = NetworkThread() // 쓰레드 생성(JSON)
         thread.start() // 쓰레드 동작(JSON)
         thread.join()
-        Log.d("shin", "what : $Test")
+//        Log.d("shin", "what : $Test")
     }
+
+//    // TestFragment로 전환하는 함수
+//    fun front(){
+//        childFragmentManager.beginTransaction()
+//            .replace(R.id.fragment, frontFragment)
+//            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+//            .commit()
+//    }
 }

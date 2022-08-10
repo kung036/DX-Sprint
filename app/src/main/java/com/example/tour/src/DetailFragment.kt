@@ -2,6 +2,7 @@ package com.example.tour.src
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,6 +14,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.tour.R
 import com.example.tour.config.BaseFragment
+import com.example.tour.databinding.FragmentDetailBinding
 import com.example.tour.databinding.FragmentMainBinding
 import com.example.tour.databinding.FragmentTestBinding
 import org.json.JSONObject
@@ -20,23 +22,42 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.URL
 
-class TestFragment : Fragment() {
-    private lateinit var binding: FragmentTestBinding
+class DetailFragment : Fragment() {
+    private lateinit var binding: FragmentDetailBinding
 //class TestFragment : BaseFragment<FragmentTestBinding>(
 //    FragmentTestBinding::bind, R.layout.fragment_test) {
 
+    private var image_url:String? = null
     private var title:String? = null
+    private var place:String? = null
+    private var content:String? = null
+    private var date:String? = null
+    private var address:String? = null
+    private var money:String? = null
+    private var phoneNumber:String? = null
+    private var homepageURL:String? = null
+    private var facility:String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Apator 내용 받아오기
         arguments?.let {
+            image_url = it.getString("image_url")
             title = it.getString("title")
+            place = it.getString("place")
+            content = it.getString("content")
+            date = it.getString("date")
+            address = it.getString("address")
+            money = it.getString("money")
+            phoneNumber = it.getString("phoneNumber")
+            homepageURL = it.getString("homepageURL")
+            facility = it.getString("facility")
         }
-        Log.d("shin", "데이터 받아오기 : $title")
+        Log.d("shin", "데이터 받아오기 : $image_url")
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentTestBinding.inflate(inflater, container, false)
+        binding = FragmentDetailBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -51,25 +72,24 @@ class TestFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonDateDialog.setOnClickListener {
-            Toast.makeText(context, "test ...", Toast.LENGTH_SHORT).show()
+        // 이미지 URL을 Bitmap으로 변경
+        var image_task: ImageURLClass = ImageURLClass()
+        image_task = ImageURLClass().apply {
+            url = URL(image_url)
         }
+        var bitmap: Bitmap = image_task.execute().get()
 
-        // 데이터 초기화
-        binding.textviewResponse.text = ""
-
-        // fragment에서 runOnithread 사용하기
-
-
-        // 버튼을 누르면 쓰레드 동작
-        binding.buttonGet.setOnClickListener {
-            Toast.makeText(context, "API test ...", Toast.LENGTH_SHORT).show()
-
-            // 쓰레드 생성
-            var thread = NetworkThread()
-            thread.start()
-        }
-
+        // 선택한 카드 데이터 넣기
+        binding.detailImageVaner.setImageBitmap(bitmap)
+        binding.detailTextTitle.text = title
+        binding.detailTextPlace.text = place
+        binding.detailTextContent.text = content
+        binding.detailTextDate.text = date
+        binding.detailTextAddress.text = address
+        binding.detailTextMoney.text = money
+        binding.detailTextPhonenumber.text = phoneNumber
+        binding.detailTextHomepageURL.text = homepageURL
+        binding.detailTextFacility.text = facility
     }
 
     // 네트워크를 이용할 때는 쓰레드를 사용해서 접근해야 함
@@ -133,18 +153,18 @@ class TestFragment : Fragment() {
                     var facility:String? = obj.getString("MIDDLE_SIZE_RM1") // 편의시설
 
                     // 데이터 추가하기
-                    binding.textviewResponse.append("$i >> title : $title\n" +
-                            "place : $place\n" +
-                            "address : $address\n" +
-                            "phoneNumber : $phoneNumber\n" +
-                            "homepageURL : $homepageURL\n" +
-                            "traffic : $traffic\n" +
-                            "day : $day\n" +
-                            "time : $time\n" +
-                            "money : $money\n" +
-                            "image : $image\n" +
-                            "content : $content\n" +
-                            "facility : $facility\n\n")
+//                    binding.textviewResponse.append("$i >> title : $title\n" +
+//                            "place : $place\n" +
+//                            "address : $address\n" +
+//                            "phoneNumber : $phoneNumber\n" +
+//                            "homepageURL : $homepageURL\n" +
+//                            "traffic : $traffic\n" +
+//                            "day : $day\n" +
+//                            "time : $time\n" +
+//                            "money : $money\n" +
+//                            "image : $image\n" +
+//                            "content : $content\n" +
+//                            "facility : $facility\n\n")
 
                 }
 
@@ -175,7 +195,7 @@ class TestFragment : Fragment() {
 //                        detail = "판매 중지"
 //                    }
 
-                    // 화면에 출력
+                // 화면에 출력
 //                    runOnUiThread {
 //                    mainActivity.runOnUiThread {
 //                        binding.textviewResponse.append("판매처 주소: ${addr}\n")

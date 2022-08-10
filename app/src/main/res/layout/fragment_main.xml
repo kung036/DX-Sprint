@@ -9,19 +9,29 @@
     <!--  탑 로고  -->
     <ImageView
         android:id="@+id/main_image_rogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="0dp"
         android:src="@drawable/creater_image1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--  검색창  -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:iconifiedByDefault="false"
+        app:queryHint="검색어를 입력하시오"
+        tools:ignore="MissingConstraints" />
+
+
     <!--  베너  -->
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/main_image_vener"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="5dp"
@@ -38,11 +48,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         android:text="가고 싶은 날짜와 장소를 설정해주세요"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/main_view_festival"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/main_image_vener" />
 
     <ImageButton
         android:layout_width="30dp"
@@ -51,7 +62,7 @@
         android:src="@drawable/main_setting"
         app:layout_constraintBottom_toTopOf="@+id/main_view_festival"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/main_image_vener" />
 
     <!--  리사이클링 뷰  -->
     <androidx.recyclerview.widget.RecyclerView
