@@ -27,7 +27,7 @@ private lateinit var binding: FragmentRecycleMainBinding
 //class MyAdapter(private val dataSet: ArrayList<card>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 class MyAdapter(private val dataSet: ArrayList<CardClass>, private val context: Context, private var mainActivity: MainActivity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-//    private val TYPE_HEADER = 0
+    //    private val TYPE_HEADER = 0
     private val TYPE_ITEM = 1
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -36,8 +36,8 @@ class MyAdapter(private val dataSet: ArrayList<CardClass>, private val context: 
 //            return HeaderViewHolder(headerBinding)
 //        }
 //        else{
-            binding = FragmentRecycleMainBinding.inflate(LayoutInflater.from(parent.context),parent, false)
-            return ViewHolder(binding)
+        binding = FragmentRecycleMainBinding.inflate(LayoutInflater.from(parent.context),parent, false)
+        return ViewHolder(binding)
 //        }
 
     }

@@ -43,7 +43,7 @@ var Test:JSONArray? = null
 
 
 class MainFragment : Fragment() {
-//class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind,
+    //class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind,
 //    R.layout.fragment_main){
     private val dataSet = arrayListOf<CardClass>()
     private lateinit var rvAdapter: MyAdapter
@@ -141,48 +141,48 @@ class MainFragment : Fragment() {
 
             // 화면에 출력
 //            mainActivity.runOnUiThread {
-                for (i in 0 until itemSize) {
-                    var obj = items.getJSONObject(i)
-                    var image: String? = obj.getString("MAIN_IMG_NORMAL") // 이미지 URL
-                    var day: String? = obj.getString("USAGE_DAY") // 운영기간
-                    var title: String? = obj.getString("TITLE") // 축제 제목
-                    var place: String? = obj.getString("MAIN_PLACE") // 장소
+            for (i in 0 until itemSize) {
+                var obj = items.getJSONObject(i)
+                var image: String? = obj.getString("MAIN_IMG_NORMAL") // 이미지 URL
+                var day: String? = obj.getString("USAGE_DAY") // 운영기간
+                var title: String? = obj.getString("TITLE") // 축제 제목
+                var place: String? = obj.getString("MAIN_PLACE") // 장소
 
-                    var address:String? = obj.getString("ADDR1") // 주소
-                    var phoneNumber:String? = obj.getString("CNTCT_TEL") // 연락처
-                    var homepageURL:String? = obj.getString("HOMEPAGE_URL") // 홈페이지
-                    var traffic:String? = obj.getString("TRFC_INFO") // 교통정보
-                    var time:String? = obj.getString("USAGE_DAY_WEEK_AND_TIME") // 이용요일 및 시간
-                    var money:String? = obj.getString("USAGE_AMOUNT") // 이용요금
-                    var content:String? = obj.getString("ITEMCNTNTS").trim().replace("\n\n","\n") // 상세내용
-                    var facility:String? = obj.getString("MIDDLE_SIZE_RM1") // 편의시설
+                var address:String? = obj.getString("ADDR1") // 주소
+                var phoneNumber:String? = obj.getString("CNTCT_TEL") // 연락처
+                var homepageURL:String? = obj.getString("HOMEPAGE_URL") // 홈페이지
+                var traffic:String? = obj.getString("TRFC_INFO") // 교통정보
+                var time:String? = obj.getString("USAGE_DAY_WEEK_AND_TIME") // 이용요일 및 시간
+                var money:String? = obj.getString("USAGE_AMOUNT") // 이용요금
+                var content:String? = obj.getString("ITEMCNTNTS").trim().replace("\n\n","\n") // 상세내용
+                var facility:String? = obj.getString("MIDDLE_SIZE_RM1") // 편의시설
 
-                    if(day == "") day = obj.getString("USAGE_DAY_WEEK_AND_TIME") // 이용요일 및 시간
+                if(day == "") day = obj.getString("USAGE_DAY_WEEK_AND_TIME") // 이용요일 및 시간
 //                    Log.d("shin", "image : $image\n" +
 //                            "day : $day\n" +
 //                            "title : $title\n" +
 //                            "place : $place\n")
 
-                    dataSet.add(
-                        CardClass(
-                            image,
-                            day,
-                            title,
-                            place,
+                dataSet.add(
+                    CardClass(
+                        image,
+                        day,
+                        title,
+                        place,
 
-                            address,
-                            phoneNumber,
-                            homepageURL,
-                            traffic,
-                            time,
-                            money,
-                            content,
-                            facility,
+                        address,
+                        phoneNumber,
+                        homepageURL,
+                        traffic,
+                        time,
+                        money,
+                        content,
+                        facility,
 
-                            obj
-                        )
+                        obj
                     )
-                }
+                )
+            }
         }
     }
 
