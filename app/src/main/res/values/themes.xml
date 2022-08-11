@@ -15,6 +15,15 @@
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-<!--        <item name="android:windowFullscreen">true</item>-->
+        <!--        <item name="android:windowFullscreen">true</item>-->
     </style>
+
+    <style name="Theme.Tour.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Tour.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Tour.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

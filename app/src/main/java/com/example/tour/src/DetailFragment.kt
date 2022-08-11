@@ -19,6 +19,7 @@ import com.example.tour.config.BaseFragment
 import com.example.tour.databinding.FragmentDetailBinding
 import com.example.tour.databinding.FragmentMainBinding
 import com.example.tour.databinding.FragmentTestBinding
+import com.example.tour.src.test.model.CrewAttendFragment
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -73,7 +74,7 @@ class DetailFragment : Fragment() {
             bundle.putString("image_url", image_url)
             bundle.putString("title", title)
             bundle.putString("place", place)
-            bundle.putInt("festival_id", festival_id)
+            bundle.putInt("festivalIdx", festival_id)
             CrewAttendFagment.arguments = bundle
 
             mainActivity.supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, CrewAttendFagment).commit()

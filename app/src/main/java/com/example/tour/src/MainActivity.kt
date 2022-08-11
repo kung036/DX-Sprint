@@ -1,6 +1,7 @@
 package com.example.tour.src
 
 import MypageFragment
+import android.content.Intent
 import android.os.Bundle
 import com.example.tour.R
 import com.example.tour.config.BaseActivity
@@ -31,9 +32,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                         supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainCrewFragment()).commit()
                     }
                     R.id.main_btn_find -> {
-                        binding.layoutTitle.text = "검색"
-                        binding.layoutImage.setImageResource(R.drawable.dashicons_arrow_right_alt)
-                        supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainFragment()).commit()
+//                        binding.layoutTitle.text = "검색"
+//                        binding.layoutImage.setImageResource(R.drawable.dashicons_arrow_right_alt)
+//                        supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainFragment()).commit()
+                            var intent = Intent(context,FindActivity::class.java)
+                            startActivity(intent)
                     }
                     R.id.main_btn_mypage -> {
                         binding.layoutTitle.text = "나의 정보"
