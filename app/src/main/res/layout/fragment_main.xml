@@ -6,27 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".src.MainFragment">
 
-    <!--  탑 로고  -->
-    <ImageView
-        android:id="@+id/main_image_rogo"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_top"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="0dp"
-        android:src="@drawable/creater_image1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="85dp"
+        android:background="#FF8888"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--  검색창  -->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:iconifiedByDefault="false"
+            app:queryHint="검색어를 입력하시오"
+            tools:ignore="MissingConstraints" />
 
-    <!--  검색창  -->
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:iconifiedByDefault="false"
-        app:queryHint="검색어를 입력하시오"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/detail_imageButton_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#FFFFFF" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="상세 페이지"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--  베너  -->
 
@@ -38,7 +59,7 @@
         android:src="@drawable/main_vener"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_image_rogo" />
+        app:layout_constraintTop_toBottomOf="@+id/main_top" />
 
     <!--  날짜시간 설정바  -->
 
@@ -48,7 +69,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
         android:text="가고 싶은 날짜와 장소를 설정해주세요"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/main_view_festival"

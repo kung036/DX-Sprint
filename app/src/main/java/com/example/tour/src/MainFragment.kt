@@ -1,41 +1,22 @@
 package com.example.tour.src
 
 import android.content.Context
-import android.graphics.*
-import android.os.AsyncTask
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.tour.R
-import com.example.tour.config.BaseFragment
-import com.example.tour.databinding.ActivityMainBinding
 import com.example.tour.databinding.FragmentMainBinding
 import com.example.tour.databinding.FragmentRecycleMainBinding
-import com.example.tour.databinding.FragmentTestBinding
-import java.io.IOException
-import java.net.MalformedURLException
 import java.net.URL
-import com.example.tour.src.ImageURLClass
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
-
-//data class card (val main_view_image: Int, val main_view_date: String, val main_view_title: String, val main_view_place: String)
-//data class card (val main_view_image: Bitmap?, val main_view_date: String?, val main_view_title: String?, val main_view_place: String?)
-
-//data class card (val main_view_image: String?, val main_view_date: String?, val main_view_title: String?, val main_view_place: String?, val item:JSONObject)
 
 private lateinit var binding: FragmentMainBinding
 private lateinit var binding2: FragmentRecycleMainBinding

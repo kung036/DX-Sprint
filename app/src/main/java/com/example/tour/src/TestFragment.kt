@@ -1,19 +1,13 @@
 package com.example.tour.src
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
-import com.example.tour.R
-import com.example.tour.config.BaseFragment
-import com.example.tour.databinding.FragmentMainBinding
 import com.example.tour.databinding.FragmentTestBinding
 import org.json.JSONObject
 import java.io.BufferedReader
@@ -102,20 +96,13 @@ class TestFragment : Fragment() {
 
             // 전체가 객체로 묶여있기 때문에 객체형태로 가져옴
             var root = JSONObject(buf.toString())
-//            var address: String = root.getString("address")
-//            var count: Int = root.getInt("count")
 
-//            var festival = root.getJSONArray("getFestivalKr")
             var festival = root.getJSONObject("getFestivalKr")
             var items = festival.getJSONArray("item")
             var itemSize = festival.getInt("numOfRows")
 
             // 화면에 출력
-//            runOnUiThread {
             mainActivity.runOnUiThread {
-                // test
-//                binding.textviewResponse.append("test : ${root}\n")
-//                binding.textviewResponse.append("test : ${items}\n")
                 for(i in 0 until itemSize) {
                     var obj = items.getJSONObject(i)
 
@@ -148,41 +135,6 @@ class TestFragment : Fragment() {
 
                 }
 
-//                binding.textviewResponse.append("address: ${address}\n")
-//                binding.textviewResponse.append("count: ${count}\n\n\n")
-
-                // 객체 안에 있는 stores라는 이름의 리스트를 가져옴
-//                var stores = root.getJSONArray("stores")
-//
-//                // 리스트에 있는 데이터 중 100개만 읽어옴
-//                for(i in 0 until 100){
-//                    var obj2 = stores.getJSONObject(i)
-//
-//                    var addr: String = obj2.getString("addr")
-//                    var name: String = obj2.getString("name")
-//                    var remain_stat: String = obj2.getString("remain_stat")
-//                    var detail: String? = null
-//
-//                    if(remain_stat.contentEquals("plenty")){
-//                        detail = "100개 이상"
-//                    }else if(remain_stat.contentEquals("some")){
-//                        detail = "30개 이상 100개 미만"
-//                    }else if(remain_stat.contentEquals("few")){
-//                        detail = "2개 이상 30개 미만"
-//                    }else if(remain_stat.contentEquals("empty")){
-//                        detail = "1개 이하"
-//                    }else if(remain_stat.contentEquals("break")){
-//                        detail = "판매 중지"
-//                    }
-
-                    // 화면에 출력
-//                    runOnUiThread {
-//                    mainActivity.runOnUiThread {
-//                        binding.textviewResponse.append("판매처 주소: ${addr}\n")
-//                        binding.textviewResponse.append("판매처 이름: ${name}\n")
-//                        binding.textviewResponse.append("재고 상태: ${remain_stat} = $detail\n\n")
-//                    }
-//                }
             }
         }
     }
