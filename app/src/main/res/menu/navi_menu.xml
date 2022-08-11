@@ -4,26 +4,26 @@
 
     <item
         android:id="@+id/main_btn_home"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/nevi_image_home"
         app:showAsAction="always"
         android:title="홈"/>
 
     <item
         android:id="@+id/main_btn_crew"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/nevi_image_crew"
         app:showAsAction="always"
         android:title="모임"/>
 
     <item
         android:id="@+id/main_btn_find"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/nevi_image_find"
         app:showAsAction="always"
         android:title="검색"/>
 
     <item
         android:id="@+id/main_btn_mypage"
-        android:icon="@drawable/ic_launcher_foreground"
+        android:icon="@drawable/nevi_image_my"
         app:showAsAction="always"
-        android:title="마이"/>
+        android:title="MY"/>
 
 </menu>

@@ -10,11 +10,17 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.mainNevi.run {
+        // 첫화면
+        supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainFragment()).commit()
+        binding.layoutImage.setImageResource(R.drawable.main_image_layout)
+        binding.layoutTitle.text = "팡파레"
 
+        binding.mainNevi.run {
             setOnItemSelectedListener {
                 when (it.itemId) {
                     R.id.main_btn_home -> {
+                        binding.layoutTitle.text = "팡파레"
+                        binding.layoutImage.setImageResource(R.drawable.main_image_layout)
                         supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainFragment()).commit()
                     }
                     R.id.main_btn_crew -> {
