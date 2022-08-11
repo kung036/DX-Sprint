@@ -12,7 +12,7 @@ import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 class ApplicationClass : Application() {
-    val API_URL = "https://prod.idus-b.shop/"
+    val API_URL = "https://dxprod.idus-b.shop/"
 
     val ADDRESS_API_URL = "https://dapi.kakao.com/"
 

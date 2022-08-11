@@ -1,6 +1,7 @@
 package com.example.tour.src
 
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import androidx.recyclerview.widget.RecyclerView
@@ -10,9 +11,13 @@ import android.view.View.inflate
 import android.view.ViewGroup
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
+import com.example.tour.src.MainActivity
 import com.example.tour.R
+import com.example.tour.databinding.ActivityMainBinding
 //import com.example.tour.databinding.ItemHeaderBinding
 import com.example.tour.databinding.FragmentRecycleMainBinding
 import com.google.android.material.snackbar.Snackbar
@@ -22,10 +27,10 @@ import kotlin.collections.ArrayList
 //import com.example.tour.src.MyAdapter.HeaderViewHolder
 
 private lateinit var binding: FragmentRecycleMainBinding
-//private lateinit var headerBinding: ItemHeaderBinding
+private lateinit var activity_binding: ActivityMainBinding
 
 //class MyAdapter(private val dataSet: ArrayList<card>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-class MyAdapter(private val dataSet: ArrayList<CardClass>, private val context: Context, private var mainActivity: MainActivity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class DetailAdapter(private val dataSet: ArrayList<CardClass>, private val context: Context, private var mainActivity: MainActivity): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     //    private val TYPE_HEADER = 0
     private val TYPE_ITEM = 1
@@ -37,9 +42,10 @@ class MyAdapter(private val dataSet: ArrayList<CardClass>, private val context: 
 //        }
 //        else{
         binding = FragmentRecycleMainBinding.inflate(LayoutInflater.from(parent.context),parent, false)
+        activity_binding = ActivityMainBinding.inflate(LayoutInflater.from(parent.context),parent, false)
+
         return ViewHolder(binding)
 //        }
-
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -77,7 +83,7 @@ class MyAdapter(private val dataSet: ArrayList<CardClass>, private val context: 
 
                 // 데이터 전달
                 val bundle = Bundle()
-                var fragment:Fragment = DetailFragment()
+                var detailfragment:Fragment = DetailFragment()
                 bundle.putString("image_url", data.image)
                 bundle.putString("title", data.title)
                 bundle.putString("place", data.place)
@@ -89,10 +95,13 @@ class MyAdapter(private val dataSet: ArrayList<CardClass>, private val context: 
                 bundle.putString("phoneNumber", data.phoneNumber)
                 bundle.putString("homepageURL", data.homepageURL)
                 bundle.putString("facility", data.facility)
-                fragment.arguments = bundle
+                bundle.putInt("festival_id", data.festival_id)
+                detailfragment.arguments = bundle
 
                 // 화면 전환
-                mainActivity.supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, fragment).commit()
+                activity_binding.layoutTitle.text = "상세 페이지"
+                activity_binding.layoutImage.setImageResource(R.drawable.dashicons_arrow_right_alt)
+                mainActivity.supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, detailfragment).commit()
 
                 //setData(layoutPosition)
             }

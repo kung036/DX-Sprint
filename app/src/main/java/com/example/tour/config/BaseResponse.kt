@@ -1,4 +1,4 @@
-package com.example.template.config
+package com.example.tour.config
 
 import com.google.gson.annotations.SerializedName
 

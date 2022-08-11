@@ -1,8 +1,10 @@
 package com.example.tour.src
 
+import MypageFragment
 import android.os.Bundle
 import com.example.tour.R
 import com.example.tour.config.BaseActivity
+import com.example.tour.crew.MainCrewFragment
 import com.example.tour.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
@@ -24,13 +26,19 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                         supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainFragment()).commit()
                     }
                     R.id.main_btn_crew -> {
-                        supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, TestFragment()).commit()
+                        binding.layoutTitle.text = "모임"
+                        binding.layoutImage.setImageResource(R.drawable.dashicons_arrow_right_alt)
+                        supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainCrewFragment()).commit()
                     }
                     R.id.main_btn_find -> {
+                        binding.layoutTitle.text = "검색"
+                        binding.layoutImage.setImageResource(R.drawable.dashicons_arrow_right_alt)
                         supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainFragment()).commit()
                     }
                     R.id.main_btn_mypage -> {
-                        supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MainFragment()).commit()
+                        binding.layoutTitle.text = "나의 정보"
+                        binding.layoutImage.setImageResource(R.drawable.dashicons_arrow_right_alt)
+                        supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MypageFragment()).commit()
                     }
                 }
                 true

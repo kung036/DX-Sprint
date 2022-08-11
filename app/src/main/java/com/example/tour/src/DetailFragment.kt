@@ -1,5 +1,6 @@
 package com.example.tour.src
 
+import CrewMakeFragment
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
@@ -12,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.example.tour.src.MainActivity
 import com.example.tour.R
 import com.example.tour.config.BaseFragment
 import com.example.tour.databinding.FragmentDetailBinding
@@ -24,9 +26,6 @@ import java.net.URL
 
 class DetailFragment : Fragment() {
     private lateinit var binding: FragmentDetailBinding
-//class TestFragment : BaseFragment<FragmentTestBinding>(
-//    FragmentTestBinding::bind, R.layout.fragment_test) {
-
     private var image_url:String? = null
     private var title:String? = null
     private var place:String? = null
@@ -37,6 +36,7 @@ class DetailFragment : Fragment() {
     private var phoneNumber:String? = null
     private var homepageURL:String? = null
     private var facility:String? = null
+    private var festival_id:Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,12 +52,32 @@ class DetailFragment : Fragment() {
             phoneNumber = it.getString("phoneNumber")
             homepageURL = it.getString("homepageURL")
             facility = it.getString("facility")
+            festival_id = it.getInt("festival_id")
+//            Log.d("shin", "데이터 받아오기(DetailFragment) : $festival_id")
         }
-        Log.d("shin", "데이터 받아오기 : $image_url")
+//        Log.d("shin", "데이터 받아오기 : $image_url")
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentDetailBinding.inflate(inflater, container, false)
+
+        // 크루 만들기
+        binding.imageFloatingCrewMake.setOnClickListener {
+            mainActivity.supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, CrewMakeFragment()).commit()
+        }
+        // 크루 참석하기
+        binding.imageFloatingCrewAttend.setOnClickListener {
+            // 데이터 전달
+            val bundle = Bundle()
+            var CrewAttendFagment:Fragment = CrewAttendFragment()
+            bundle.putString("image_url", image_url)
+            bundle.putString("title", title)
+            bundle.putString("place", place)
+            bundle.putInt("festival_id", festival_id)
+            CrewAttendFagment.arguments = bundle
+
+            mainActivity.supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, CrewAttendFagment).commit()
+        }
 
         return binding.root
     }

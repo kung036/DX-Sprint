@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tour.src.MainActivity
 import com.example.tour.databinding.FragmentMainBinding
 import com.example.tour.databinding.FragmentRecycleMainBinding
 import java.net.URL
@@ -27,7 +28,7 @@ class MainFragment : Fragment() {
     //class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind,
 //    R.layout.fragment_main){
     private val dataSet = arrayListOf<CardClass>()
-    private lateinit var rvAdapter: MyAdapter
+    private lateinit var DtAdapter: DetailAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,38 +52,36 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // 리사이클러 뷰
-        addData() // 데이터추가(잠시 주석)
+        addData() // 데이터추가
 
-        rvAdapter = MyAdapter(dataSet, requireContext(), mainActivity)
+        DtAdapter = DetailAdapter(dataSet, requireContext(), mainActivity)
 //        rvAdapter = MyAdapter(dataSet)
         binding.mainViewFestival.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        binding.mainViewFestival.adapter = rvAdapter
-        val itemTouchCallback = object : ItemTouchHelper.SimpleCallback(
-            ItemTouchHelper.UP or ItemTouchHelper.DOWN, ItemTouchHelper.LEFT
-        ) {
-            override fun onMove(
-                recyclerView: RecyclerView,
-                viewHolder: RecyclerView.ViewHolder,
-                target: RecyclerView.ViewHolder
-            ): Boolean {
-                val fromPos: Int = viewHolder.adapterPosition
-                val toPos: Int = target.adapterPosition
-                rvAdapter.swapData(fromPos, toPos)
-                return true
-            }
-
-            //스와이프시 데이터 삭제
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                rvAdapter.removeData(viewHolder.layoutPosition)
-            }
-        }
-        ItemTouchHelper(itemTouchCallback).attachToRecyclerView(binding.mainViewFestival)
+        binding.mainViewFestival.adapter = DtAdapter
+//        val itemTouchCallback = object : ItemTouchHelper.SimpleCallback(
+//            ItemTouchHelper.UP or ItemTouchHelper.DOWN, ItemTouchHelper.LEFT
+//        ) {
+//            override fun onMove(
+//                recyclerView: RecyclerView,
+//                viewHolder: RecyclerView.ViewHolder,
+//                target: RecyclerView.ViewHolder
+//            ): Boolean {
+//                val fromPos: Int = viewHolder.adapterPosition
+//                val toPos: Int = target.adapterPosition
+//                DtAdapter.swapData(fromPos, toPos)
+//                return true
+//            }
+//
+//            //스와이프시 데이터 삭제
+//            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+//                DtAdapter.removeData(viewHolder.layoutPosition)
+//            }
+//        }
+//        ItemTouchHelper(itemTouchCallback).attachToRecyclerView(binding.mainViewFestival)
     }
     // 네트워크를 이용할 때는 쓰레드를 사용해서 접근해야 함(JSON 가져오기)
     inner class NetworkThread: Thread() {
-//        var key2:String = ""
-
         override fun run() {
             // 접속할 페이지 주소: Site
             var base_url = "http://apis.data.go.kr/6260000/FestivalService/getFestivalKr?"
@@ -137,6 +136,8 @@ class MainFragment : Fragment() {
                 var money:String? = obj.getString("USAGE_AMOUNT") // 이용요금
                 var content:String? = obj.getString("ITEMCNTNTS").trim().replace("\n\n","\n") // 상세내용
                 var facility:String? = obj.getString("MIDDLE_SIZE_RM1") // 편의시설
+                var festival_id:Int = obj.getInt("UC_SEQ")// festival ID
+                Log.d("shin", "데이터 받아오기(MainFragment) : $festival_id")
 
                 if(day == "") day = obj.getString("USAGE_DAY_WEEK_AND_TIME") // 이용요일 및 시간
 //                    Log.d("shin", "image : $image\n" +
@@ -159,6 +160,7 @@ class MainFragment : Fragment() {
                         money,
                         content,
                         facility,
+                        festival_id,
 
                         obj
                     )

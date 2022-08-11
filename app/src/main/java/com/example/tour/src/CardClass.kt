@@ -16,8 +16,9 @@ data class CardClass (
     val money:String?,
     val content:String?,
     val facility:String?,
+    var festival_id:Int,
 
-    val item: JSONObject
+    val item: JSONObject?
 
 )
 
