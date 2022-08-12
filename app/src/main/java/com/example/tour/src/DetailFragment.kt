@@ -2,23 +2,14 @@ package com.example.tour.src
 
 import CrewMakeFragment
 import android.content.Context
-import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
-import com.example.tour.src.MainActivity
 import com.example.tour.R
-import com.example.tour.config.BaseFragment
 import com.example.tour.databinding.FragmentDetailBinding
-import com.example.tour.databinding.FragmentMainBinding
-import com.example.tour.databinding.FragmentTestBinding
 import com.example.tour.src.test.model.CrewAttendFragment
 import org.json.JSONObject
 import java.io.BufferedReader

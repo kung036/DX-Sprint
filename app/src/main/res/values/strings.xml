@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">tour</string>
+    <string name="app_name">팡파레</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textview_default_date">yyyy-mm-dd 00:00:00</string>

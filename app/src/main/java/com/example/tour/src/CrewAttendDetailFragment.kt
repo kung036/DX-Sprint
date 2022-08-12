@@ -2,29 +2,11 @@ package com.example.tour.src
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.tour.R
 import com.example.tour.config.BaseFragment
-import com.example.tour.src.MainActivity
 import com.example.tour.databinding.*
-import com.example.tour.detail.CrewDetailAdapter
-import com.example.tour.detail.Perticipate
-import com.example.tour.src.test.CrewAttendFragmentInterface
 import com.example.tour.src.test.model.CrewFestival
-import com.example.tour.src.test.model.GetCrewFestivalRes
-import java.net.URL
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 private lateinit var binding: FragmentCrewAttendDetailBinding
 

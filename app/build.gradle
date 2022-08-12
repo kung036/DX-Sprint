@@ -23,7 +23,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.tour"
+        applicationId 'pangparea.aqi10.version001'
         minSdkVersion 23
         targetSdkVersion 33
 //        targetSdkVersion 31
