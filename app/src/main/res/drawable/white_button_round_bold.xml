@@ -1,0 +1,17 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <solid android:color="#fff" /> //배경색
+
+    <stroke
+        android:width="2dp"
+        android:color="#525252" /> //선색
+
+    <corners
+        android:topLeftRadius="3dp"
+        android:topRightRadius="3dp"
+        android:bottomLeftRadius="3dp"
+        android:bottomRightRadius="3dp"  /> // 선 휘는각도
+
+    />
+
+</shape>

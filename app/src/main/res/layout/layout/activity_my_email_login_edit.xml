@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="아이디 "
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="181dp"
+            android:layout_marginLeft="55dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="abcdefg@naver.com"
+            android:textSize="17sp"
+            android:textColor="#757575"
+            android:layout_marginLeft="57dp"
+            android:layout_marginTop="10dp"/>
+        <FrameLayout
+            android:layout_width="303dp"
+            android:layout_height="1dp"
+            android:background="#848484"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp">
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="비밀번호 "
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="23dp"
+            android:layout_marginLeft="55dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="영문, 숫자, 특수문자 포함 8~14자리"
+            android:textSize="14sp"
+            android:textColor="#757575"
+            android:layout_marginLeft="57dp"
+            android:layout_marginTop="10dp"/>
+        <FrameLayout
+            android:layout_width="303dp"
+            android:layout_height="1dp"
+            android:background="#848484"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp">
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입하기"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="57dp"
+            android:layout_marginTop="22dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:layout_marginLeft="57dp"
+                android:layout_marginTop="5dp"
+                android:text="비밀번호를 잊어버리셨나요?"
+                android:textSize="12sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="비밀번호 재설정"
+                android:textSize="12sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="80dp"
+            android:layout_height="1dp"
+            android:background="#848484"
+            android:layout_marginLeft="203dp">
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="305dp"
+            android:layout_height="44dp"
+            android:text="로그인"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_round_dark"
+            android:layout_gravity="center"
+            android:layout_marginTop="26dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="34dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:background="#848484"
+                    android:layout_gravity="center_vertical">
+                </FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="간편 로그인"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                <FrameLayout
+                    android:layout_width="80dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="#848484"
+                    android:layout_gravity="center_vertical">
+                </FrameLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="31dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:src="@drawable/kakao_mark"
+                    android:background="">
+                </ImageButton>
+                <ImageButton
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:src="@drawable/naver_mark"
+                    android:layout_marginLeft="15dp"
+                    android:background="">
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="인증번호"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginTop="85dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="받은 인증번호 6자리를 입력해주세요."
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginTop="27dp"/>
+        <FrameLayout
+            android:layout_width="266dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_marginTop="74dp"
+            android:layout_gravity="center"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button2"
+            android:layout_width="203dp"
+            android:layout_height="52dp"
+            android:background="@drawable/button_round_dark"
+            android:text="인증완료"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="26dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
