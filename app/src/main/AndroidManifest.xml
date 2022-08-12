@@ -15,11 +15,11 @@
         android:theme="@style/Theme.Tour"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".src.FindActivity"
+            android:name=".src.search.FindActivity"
             android:label="@string/title_activity_find"
             android:theme="@style/Theme.Tour.NoActionBar"></activity>
         <activity
-            android:name=".src.MainActivity"
+            android:name=".src.home.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
