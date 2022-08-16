@@ -27,6 +27,7 @@
             android:layout_gravity="center_vertical|center_horizontal"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/crew_make_button"
             android:layout_width="231dp"
             android:layout_height="47dp"
             android:background="@drawable/button_round_pink"

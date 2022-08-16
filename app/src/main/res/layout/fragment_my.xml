@@ -16,9 +16,10 @@
         android:layout_marginEnd="0dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:gravity="center">
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -28,8 +29,7 @@
                     android:layout_height="76dp"
                     app:cardCornerRadius="50dp"
                     app:cardBackgroundColor="#D9D9D9"
-                    android:layout_marginLeft="26dp"
-                    android:layout_marginTop="38dp">
+                    android:layout_marginTop="30dp">
 
                     <ImageView
                         android:layout_width="40.25dp"
@@ -54,18 +54,47 @@
                 </androidx.cardview.widget.CardView>
 
             </FrameLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/my_button_signup"
+                    android:layout_width="142dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/white_button_round"
+                    android:layout_marginTop="30dp"
+                    android:text="회원가입"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/my_button_login"
+                    android:layout_width="142dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/white_button_round"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="21dp"
+                    android:text="로그인하기"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/my_nickname"
+                    android:layout_width="142dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:text="닉네임"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="142dp"
-                android:layout_height="30dp"
-                android:background="@drawable/white_button_round"
-                android:layout_marginTop="61dp"
-                android:layout_marginLeft="21dp"
-                android:text="로그인하기"
-                android:gravity="center"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -133,6 +162,14 @@
             android:text="크루 둘러보기"
             android:textColor="@color/white"
             android:textSize="14dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/log_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="로그아웃"/>
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

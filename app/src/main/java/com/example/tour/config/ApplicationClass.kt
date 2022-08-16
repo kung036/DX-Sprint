@@ -32,6 +32,7 @@ class ApplicationClass : Application() {
         val SELECT_DAY = "SELECT_DAY"
         //소셜로그인시 사용
         val ADDRESS_KEY = "77bf0c5c048b5b248605af87fc714045"
+        val NICKNAME_TOKEN = "NICKNAME_TOKEN"
 
         lateinit var sRetrofit: Retrofit
 
