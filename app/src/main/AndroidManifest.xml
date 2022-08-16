@@ -19,7 +19,7 @@
             android:label="@string/title_activity_find"
             android:theme="@style/Theme.Tour.NoActionBar"></activity>
         <activity
-            android:name=".src.home.MainActivity"
+            android:name=".src.splash.FirstSplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +27,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".src.chat.room.RoomActivity" android:windowSoftInputMode="adjustUnspecified"/>
+        <activity android:name=".src.home.MainActivity"/>
+        <activity android:name=".src.splash.SecondSplashActivity"/>
+        <activity android:name=".src.home.collect.FestivalCollectActivity"/>
+        <activity android:name=".src.home.detail.DetailActivity"/>
+        <activity android:name=".src.crew.make.CrewMakeActivity"/>
     </application>
 
 </manifest>

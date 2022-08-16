@@ -39,13 +39,6 @@ class CrewAttendFragment : BaseFragment<FragmentCrewAttendBinding>
         }
     }
 
-    // fragment에서 runOnithread 사용하기
-    lateinit var mainActivity: MainActivity
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        mainActivity = context as MainActivity
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // 이미지 URL을 Bitmap으로 변경
@@ -61,7 +54,7 @@ class CrewAttendFragment : BaseFragment<FragmentCrewAttendBinding>
         CrewAttendFragmentService(this).tryGetCrewFestivalDetail(festivalIdx)
 
         // 리사이클러 뷰
-        CAdapter = CrewApater_me(dataSet, requireContext(), mainActivity)
+        CAdapter = CrewApater_me(dataSet, requireContext())
         binding.crewAttendRecycler.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.crewAttendRecycler.adapter = CAdapter
@@ -77,7 +70,7 @@ class CrewAttendFragment : BaseFragment<FragmentCrewAttendBinding>
                         response.result[i].dibsCount))
                 }
                 CAdapter.notifyDataSetChanged()
-                CAdapter = CrewApater_me(dataSet, requireContext(), activity as MainActivity)
+                CAdapter = CrewApater_me(dataSet, requireContext())
             }
             else -> {
                 showCustomToast(response.message.toString())

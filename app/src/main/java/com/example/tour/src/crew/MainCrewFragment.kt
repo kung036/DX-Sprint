@@ -1,5 +1,6 @@
 package com.example.tour.src.crew
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,6 +8,7 @@ import com.example.tour.src.crew.model.GetCrewRes
 import com.example.tour.config.BaseFragment
 import com.example.tour.databinding.FragmentMainCrewEditBinding
 import com.example.tour.R
+import com.example.tour.src.crew.make.CrewMakeActivity
 import com.example.tour.src.home.MainActivity
 
 data class PopularCrew(
@@ -32,8 +34,9 @@ class MainCrewFragment : BaseFragment<FragmentMainCrewEditBinding>
         binding.popularCrew.adapter = rvAdapter
 
         binding.createCrew.setOnClickListener {
-            //val intent = Intent(context,DetailCreateCrewActivity::class.java)
-            //context?.startActivity(intent)
+            val intent = Intent(context, CrewMakeActivity::class.java)
+            intent.putExtra("title","")
+            startActivity(intent)
         }
     }
 

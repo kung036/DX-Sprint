@@ -10,19 +10,19 @@
 
     <item
         android:id="@+id/main_btn_crew"
-        android:icon="@drawable/nevi_image_crew"
+        android:icon="@drawable/nevi_image_my"
         app:showAsAction="always"
         android:title="모임"/>
 
     <item
         android:id="@+id/main_btn_find"
-        android:icon="@drawable/nevi_image_find"
+        android:icon="@drawable/nevi_image_chatting"
         app:showAsAction="always"
         android:title="검색"/>
 
     <item
         android:id="@+id/main_btn_mypage"
-        android:icon="@drawable/nevi_image_my"
+        android:icon="@drawable/nevi_image_crew"
         app:showAsAction="always"
         android:title="MY"/>
 

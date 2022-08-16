@@ -8,4 +8,6 @@ import retrofit2.http.Path
 interface CrewAttendFragmentRetrofitInterface {
     @GET("/crews/festival/{festivalIdx}")
     fun getCrewFestivalDetail(@Path("festivalIdx") festivalIdx : Int): Call<GetCrewFestivalRes>
+
+
 }
