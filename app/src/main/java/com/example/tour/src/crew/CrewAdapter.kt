@@ -42,9 +42,8 @@ class CrewAdapter(private val dataSet: ArrayList<PopularCrew>, var con : Context
     inner class ViewHolder(private val binding : ItemRecycleCrewBinding) : RecyclerView.ViewHolder(binding.root) {
         //var textData = arrayListOf<CrewParticipate>()
         fun bind(data: PopularCrew) {
-            Glide.with(con).load(data.festivalImageUrl).into(binding.crewViewImage);
+            Glide.with(con).load(data.festivalImageUrl).into(binding.crewViewImage)
             var titleStr = data.title.split("(")
-            binding.festivalTitle.text = titleStr[0].toString()
             binding.crewName.text = data.crewName
             binding.crewCondition.text = data.crewGender
             binding.crewHeadCount.text = "${data.crewHeadCount -1}/${data.totalHeadCount}명 참여"

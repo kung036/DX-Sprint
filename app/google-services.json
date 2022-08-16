@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "521332234900",
+    "firebase_url": "https://dx-sprint-e06b6-default-rtdb.firebaseio.com",
+    "project_id": "dx-sprint-e06b6",
+    "storage_bucket": "dx-sprint-e06b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521332234900:android:f713c691e3c25136603281",
+        "android_client_info": {
+          "package_name": "com.example.tour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521332234900-bb9ua23jfqearh5on0u0uj0cndmevso6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz7l3NWxZY_zkQ4omwS435QVbP89_0e4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521332234900-bb9ua23jfqearh5on0u0uj0cndmevso6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521332234900:android:efb4a347519f9477603281",
+        "android_client_info": {
+          "package_name": "pangparea.aqi10.version001"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521332234900-bb9ua23jfqearh5on0u0uj0cndmevso6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz7l3NWxZY_zkQ4omwS435QVbP89_0e4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521332234900-bb9ua23jfqearh5on0u0uj0cndmevso6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

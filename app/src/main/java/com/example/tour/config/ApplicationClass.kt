@@ -16,6 +16,7 @@ class ApplicationClass : Application() {
 
     val ADDRESS_API_URL = "https://dapi.kakao.com/"
 
+    val OPEN_API_URL = "http://apis.data.go.kr/6260000/FestivalService/"
     // 테스트 서버 주소
     // val API_URL = "http://prod.carrot-market.site:9000/products"
 
@@ -28,12 +29,15 @@ class ApplicationClass : Application() {
         lateinit var editor : SharedPreferences.Editor
         val X_ACCESS_TOKEN = "X-ACCESS-TOKEN"
         val USER_IDX = "USER_IDX"
+        val SELECT_DAY = "SELECT_DAY"
         //소셜로그인시 사용
         val ADDRESS_KEY = "77bf0c5c048b5b248605af87fc714045"
 
         lateinit var sRetrofit: Retrofit
 
         lateinit var aRetrofit: Retrofit
+
+        lateinit var openRetrofit: Retrofit
     }
     override fun onCreate() {
         super.onCreate()
@@ -62,6 +66,13 @@ class ApplicationClass : Application() {
             .addNetworkInterceptor(KakaoAccessInterceptor())
             .build()
 
+        //오픈 api 호출시 사용
+        val openClient: OkHttpClient = OkHttpClient.Builder()
+            .readTimeout(5000, TimeUnit.MILLISECONDS)
+            .connectTimeout(5000, TimeUnit.MILLISECONDS)
+            // 로그캣에 okhttp.OkHttpClient로 검색하면 http 통신 내용을 보여줍니다.
+            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+            .build()
         // sRetrofit 이라는 전역변수에 API url, 인터셉터, Gson을 넣어주고 빌드해주는 코드
         // 이 전역변수로 http 요청을 서버로 보내면 됩니다.
         sRetrofit = Retrofit.Builder()
@@ -73,6 +84,12 @@ class ApplicationClass : Application() {
         aRetrofit = Retrofit.Builder()
             .baseUrl(ADDRESS_API_URL)
             .client(client2)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        //오픈 api 호출시 사용
+        openRetrofit = Retrofit.Builder()
+            .baseUrl(OPEN_API_URL)
+            .client(openClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

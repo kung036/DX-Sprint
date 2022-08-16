@@ -23,8 +23,7 @@ private lateinit var binding: ItemRecycleCrewBinding
 
 class CrewApater_me(
     private val dataSet: ArrayList<CrewFestival>,
-    private val context: Context,
-    private var mainActivity: MainActivity
+    private val context: Context
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         binding =
@@ -62,7 +61,6 @@ class CrewApater_me(
             var titleStr = data.title.split("(")
 
             binding.crewViewImage.setImageBitmap(bitmap) // String 이미지
-            binding.festivalTitle.text = titleStr[0].toString()
             binding.crewName.text = data.crewName
             binding.crewCondition.text = data.crewGender
             binding.crewHeadCount.text = "${data.crewHeadCount -1}/${data.totalHeadCount}명 참여"
@@ -81,8 +79,8 @@ class CrewApater_me(
                 crewAttendDetailFragment.arguments = bundle
 
                 // 화면 전환
-                mainActivity.supportFragmentManager.beginTransaction()
-                    .replace(R.id.framelaout_container, crewAttendDetailFragment).commit()
+                //mainActivity.supportFragmentManager.beginTransaction()
+                 //   .replace(R.id.framelaout_container, crewAttendDetailFragment).commit()
             }
         }
     }

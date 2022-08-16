@@ -5,23 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".src.home.MainActivity">
+    tools:context=".src.home.MainActivity"
+    android:background="#FFFFFF">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:background="#FF8888"
+        android:layout_height="56dp"
+        android:background="@color/backgroundColor"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <ImageButton
         android:id="@+id/layout_image"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/dashicons_arrow_right_alt"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/logo_word_type"
         android:background="@null"
+        android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="@id/toolbar"
@@ -31,14 +33,26 @@
         android:id="@+id/layout_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="설정"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:fontFamily="@font/netmarble_b"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        android:layout_marginStart="20dp"/>
+
+    <ImageButton
+        android:id="@+id/layout_search"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_search_white"
+        android:background="@null"
+        android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="@id/toolbar"
         app:layout_constraintEnd_toEndOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="@id/toolbar"
-        app:layout_constraintBottom_toBottomOf="@id/toolbar"/>
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        android:layout_marginEnd="20dp"/>
 
     <FrameLayout
         android:layout_width="0dp"
@@ -51,7 +65,7 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
-        android:layout_height="63dp"
+        android:layout_height="56dp"
         android:layout_weight="1"
         android:id="@+id/main_nevi"
         android:background="#FFFFFF"
