@@ -57,4 +57,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         }
     }
 
+    //
+    fun onMyFragmentChange() {
+        binding.layoutTitle.text = "마이 페이지"
+        //binding.layoutImage.setImageResource(R.drawable.icons8_back_50)
+        binding.toolbar.setBackgroundColor(getResources().getColor(R.color.white))
+        binding.toolbar.setBackgroundResource(R.color.white)
+        supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MyFragment()).commit()
+    }
+
 }

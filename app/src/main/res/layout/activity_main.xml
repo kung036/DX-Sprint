@@ -33,14 +33,13 @@
         android:id="@+id/layout_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/netmarble_b"
         android:textColor="#000000"
         android:textSize="20dp"
-        android:fontFamily="@font/netmarble_b"
-        app:layout_constraintTop_toTopOf="@id/toolbar"
-        app:layout_constraintStart_toStartOf="@id/toolbar"
-        app:layout_constraintEnd_toEndOf="@id/toolbar"
         app:layout_constraintBottom_toBottomOf="@id/toolbar"
-        android:layout_marginStart="20dp"/>
+        app:layout_constraintEnd_toEndOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="@id/toolbar" />
 
     <ImageButton
         android:id="@+id/layout_search"

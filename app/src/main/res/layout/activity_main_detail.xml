@@ -37,6 +37,7 @@
         android:textColor="#000000"
         android:textSize="20dp"
         android:text="상세페이지"
+        android:textStyle="bold"
         app:layout_constraintTop_toTopOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="@id/toolbar"
         app:layout_constraintEnd_toEndOf="@id/toolbar"

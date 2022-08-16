@@ -7,16 +7,16 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MySignupService(val mySignupFragmentInterface : MySignupFragmentInterface) {
+class MySignupService(val mySignupActivityInterface : MySignupActivityInterface) {
     fun tryPostSignUp(postSignUpRequest: PostSignUpReq){
         val mySignupRetrofitInterface = ApplicationClass.sRetrofit.create(MySignupRetrofitInterface::class.java)
         mySignupRetrofitInterface.postSignUp(postSignUpRequest).enqueue(object : Callback<PostSignUpRes> {
             override fun onResponse(call: Call<PostSignUpRes>, response: Response<PostSignUpRes>) {
-                mySignupFragmentInterface.onPostSignUpSuccess(response.body() as PostSignUpRes)
+                mySignupActivityInterface.onPostSignUpSuccess(response.body() as PostSignUpRes)
             }
 
             override fun onFailure(call: Call<PostSignUpRes>, t: Throwable) {
-                mySignupFragmentInterface.onPostSignUpFailure(t.message ?: "통신 오류")
+                mySignupActivityInterface.onPostSignUpFailure(t.message ?: "통신 오류")
             }
         })
     }

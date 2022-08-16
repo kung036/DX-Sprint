@@ -33,6 +33,8 @@ class ApplicationClass : Application() {
         //소셜로그인시 사용
         val ADDRESS_KEY = "77bf0c5c048b5b248605af87fc714045"
         val NICKNAME_TOKEN = "NICKNAME_TOKEN"
+        val USER_EMAIL = "USER-EMAIL"
+        val USER_PW = "USER-PW"
 
         lateinit var sRetrofit: Retrofit
 

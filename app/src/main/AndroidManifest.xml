@@ -33,6 +33,9 @@
         <activity android:name=".src.home.collect.FestivalCollectActivity"/>
         <activity android:name=".src.home.detail.DetailActivity"/>
         <activity android:name=".src.crew.make.CrewMakeActivity"/>
+        <activity android:name=".src.my.login.MyLoginActivity" />
+        <activity android:name=".src.my.signup.MySignupActivity" />
+        <activity android:name=".src.my.signup.MyLoginSuccessActivity"/>
     </application>
 
 </manifest>

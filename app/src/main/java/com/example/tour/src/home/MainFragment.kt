@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -40,7 +41,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind
     R.layout.fragment_main), MainFragmentInterface{
     private val dataSet = arrayListOf<FewCrew>()
     private lateinit var rvAdapter: MainAdapter
-
     private var image_url = arrayListOf<String>()
     private var title = arrayListOf<String>()
     private var place = arrayListOf<String>()
@@ -187,7 +187,17 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind
     }
 
     override fun onGetFestivalFailure(message: String) {
-        showCustomToast("오류 : $message")
+        // 에러 코드
+//        java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.String android.content.Context.getPackageName()' on a null object reference
+
+        // 에러 수정 전
+    //        showCustomToast("오류 : $message")
+        var t = message
+        if(t == null) t = "null_error"
+        else if(t == "") t = "empty_error"
+        Log.d("shin", "mainFragment_onGetFestivalFailure : $t")
+//        Toast.makeText(context, "${message}", Toast.LENGTH_SHORT).show()
+
     }
 
     override fun onGetFewCrewSuccess(response: GetCrewRes) {
@@ -215,5 +225,4 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind
     override fun onGetFewCrewFailure(message: String) {
         showCustomToast("오류 : $message")
     }
-
 }
