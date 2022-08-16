@@ -42,8 +42,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                         binding.toolbar.setBackgroundColor(R.color.white)
                         binding.toolbar.setBackgroundResource(R.color.white)
                         supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, ChatFragment()).commit()
-//                            var intent = Intent(context, FindActivity::class.java)
-//                            startActivity(intent)
+
                     }
                     R.id.main_btn_mypage -> {
                         binding.layoutTitle.text = "마이 페이지"
