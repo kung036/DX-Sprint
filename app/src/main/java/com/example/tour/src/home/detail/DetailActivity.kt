@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import com.example.tour.R
 import com.example.tour.config.BaseActivity
 import com.example.tour.databinding.ActivityMainDetailBinding
+import com.example.tour.src.crew.crewAttend.model.CrewAttendActivity
 import com.example.tour.util.ImageURLClass
-import com.example.tour.src.crew.crewAttend.model.CrewAttendFragment
 import com.example.tour.src.crew.make.CrewMakeActivity
 import java.net.URL
 
@@ -70,33 +70,41 @@ class DetailActivity : BaseActivity<ActivityMainDetailBinding>(ActivityMainDetai
         // 크루 참석하기
         binding.imageFloatingCrewAttend.setOnClickListener {
             // 데이터 전달
-            val bundle = Bundle()
-            var CrewAttendFagment: Fragment = CrewAttendFragment()
-            bundle.putString("image_url", image_url)
-            bundle.putString("title", title)
-            bundle.putString("place", place)
-            bundle.putInt("festivalIdx", festival_id)
-            CrewAttendFagment.arguments = bundle
+            val intent = Intent(this,CrewAttendActivity::class.java)
+            intent.putExtra("title",title)
+            intent.putExtra("image_url", image_url)
+            intent.putExtra("title", title)
+            intent.putExtra("place", place)
+            intent.putExtra("festivalIdx", festival_id)
+            startActivity(intent)
 
-            supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, CrewAttendFagment).commit()
-            // 이미지 URL을 Bitmap으로 변경
-            var image_task: ImageURLClass = ImageURLClass()
-            image_task = ImageURLClass().apply {
-                url = URL(image_url)
-            }
-            var bitmap: Bitmap = image_task.execute().get()
+//            val bundle = Bundle()
+//            var CrewAttendFagment: Fragment = CrewAttendFragment()
+//            bundle.putString("image_url", image_url)
+//            bundle.putString("title", title)
+//            bundle.putString("place", place)
+//            bundle.putInt("festivalIdx", festival_id)
+//            CrewAttendFagment.arguments = bundle
+//
+//            supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, CrewAttendFagment).commit()
+//            // 이미지 URL을 Bitmap으로 변경
+//            var image_task: ImageURLClass = ImageURLClass()
+//            image_task = ImageURLClass().apply {
+//                url = URL(image_url)
+//            }
+//            var bitmap: Bitmap = image_task.execute().get()
 
-            // 선택한 카드 데이터 넣기
-            binding.detailImageVaner.setImageBitmap(bitmap)
-            binding.detailTextTitle.text = title
-            //binding.detailTextPlace.text = place
-            binding.detailTextContent.text = content
-            binding.detailTextDate.text = date
-            binding.detailTextAddress.text = address
-            binding.detailTextMoney.text = money
-            binding.detailTextPhonenumber.text = phoneNumber
-            binding.detailTextHomepageURL.text = homepageURL
-            binding.detailTextFacility.text = facility
+//            // 선택한 카드 데이터 넣기
+//            binding.detailImageVaner.setImageBitmap(bitmap)
+//            binding.detailTextTitle.text = title
+//            //binding.detailTextPlace.text = place
+//            binding.detailTextContent.text = content
+//            binding.detailTextDate.text = date
+//            binding.detailTextAddress.text = address
+//            binding.detailTextMoney.text = money
+//            binding.detailTextPhonenumber.text = phoneNumber
+//            binding.detailTextHomepageURL.text = homepageURL
+//            binding.detailTextFacility.text = facility
         }
     }
 }

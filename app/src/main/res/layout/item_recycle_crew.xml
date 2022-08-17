@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="150dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
+        android:elevation="5dp"
         app:cardCornerRadius="15dp"
-        android:layout_marginTop="10dp"
-        android:elevation="5dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,22 +30,22 @@
                 android:id="@+id/cv_crew_view_image"
                 android:layout_width="118dp"
                 android:layout_height="127dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginStart="10dp"
+                android:background="@drawable/tv_outside_stroke_black"
                 app:cardCornerRadius="10dp"
-                android:background="@drawable/tv_outside_stroke_black">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
                     android:id="@+id/crew_view_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
                     android:background="@drawable/ic_launcher_background"
+                    android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.cardview.widget.CardView>
 
@@ -53,28 +53,28 @@
                 android:id="@+id/ll_crew_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:orientation="horizontal"
+                android:layout_marginTop="40dp"
                 app:layout_constraintStart_toEndOf="@id/cv_crew_view_image"
                 app:layout_constraintTop_toTopOf="@id/cv_crew_view_image"
-                app:layout_constraintBottom_toBottomOf="@id/cv_crew_view_image"
-                android:layout_marginStart="10dp"
                 app:layout_constraintVertical_bias="0.45">
 
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:src="@drawable/limi_small"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/limi_small" />
 
                 <TextView
                     android:id="@+id/crew_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     android:ellipsize="end"
                     android:text="크루이름"
-                    android:textSize="12sp"
                     android:textColor="@color/black"
-                    android:layout_marginStart="5dp"/>
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -82,76 +82,76 @@
                 android:id="@+id/ll_crew_head_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="7dp"
-                app:layout_constraintTop_toBottomOf="@id/ll_crew_name"
-                app:layout_constraintStart_toStartOf="@id/ll_crew_name">
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/ll_crew_name"
+                app:layout_constraintTop_toBottomOf="@id/ll_crew_name">
 
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:src="@drawable/icons8_age"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/icons8_age" />
 
                 <TextView
                     android:id="@+id/crew_head_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     android:text="6명 모집"
                     android:textColor="@color/black"
-                    android:textSize="11sp"
-                    android:layout_marginStart="5dp"/>
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/ll_crew_activity_date"
+            <LinearLayout
+                android:id="@+id/ll_crew_activity_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/ll_crew_head_count"
+                app:layout_constraintTop_toBottomOf="@id/ll_crew_head_count">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/rectangle_39" />
+
+                <TextView
+                    android:id="@+id/crew_activity_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="7dp"
-                    app:layout_constraintTop_toBottomOf="@id/ll_crew_head_count"
-                    app:layout_constraintStart_toStartOf="@id/ll_crew_head_count">
+                    android:text="활동일"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
 
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:src="@drawable/rectangle_39"
-                        android:layout_gravity="center"/>
-
-                    <TextView
-                        android:id="@+id/crew_activity_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="활동일"
-                        android:textColor="@color/black"
-                        android:textSize="11sp" />
-
-                </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_crew_condition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="7dp"
-                app:layout_constraintTop_toBottomOf="@id/ll_crew_activity_date"
-                app:layout_constraintStart_toStartOf="@id/ll_crew_activity_date">
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/ll_crew_activity_date"
+                app:layout_constraintTop_toBottomOf="@id/ll_crew_activity_date">
 
                 <ImageView
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-                    android:src="@drawable/fluent_people_12_regular"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/fluent_people_12_regular" />
 
                 <TextView
                     android:id="@+id/crew_condition"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
                     android:text="누구나 참여 가능"
                     android:textColor="@color/black"
-                    android:textSize="11sp"
-                    android:layout_marginStart="5dp"/>
+                    android:textSize="11sp" />
 
             </LinearLayout>
 
@@ -159,15 +159,15 @@
                 android:id="@+id/fl_dibs_frame"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:background="@drawable/dibs_stroke_5"
                 android:paddingStart="8dp"
-                android:paddingEnd="8dp"
                 android:paddingTop="3dp"
-                android:paddingBottom="3dp">
+                android:paddingEnd="8dp"
+                android:paddingBottom="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageButton
                     android:id="@+id/crew_dibs_status"
@@ -175,21 +175,21 @@
                     android:layout_height="15dp"
                     android:layout_gravity="center"
                     android:background="@null"
-                    android:src="@drawable/icons8_red_heart_48"
                     android:scaleType="fitCenter"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    android:src="@drawable/icons8_red_heart_48"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/crew_dibs_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4명"
-                    android:textSize="11sp"
-                    android:textColor="@color/black"
                     android:layout_marginStart="2dp"
-                    app:layout_constraintTop_toTopOf="@id/crew_dibs_status"
-                    app:layout_constraintStart_toEndOf="@id/crew_dibs_status"/>
+                    android:text="4명"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toEndOf="@id/crew_dibs_status"
+                    app:layout_constraintTop_toTopOf="@id/crew_dibs_status" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

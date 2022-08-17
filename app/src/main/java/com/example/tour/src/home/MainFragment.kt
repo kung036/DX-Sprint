@@ -71,7 +71,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind
             val intent = Intent(context,FestivalCollectActivity::class.java)
             startActivity(intent)
         }
-        binding.llFestival1.setOnClickListener{
+        binding.llFestival1.setOnClickListener {
             val intent = Intent(context,DetailActivity::class.java)
             intent.putExtra("image_url",image_url[0])
             intent.putExtra("title",title[0])
@@ -85,7 +85,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind
             intent.putExtra("facility",facility[0])
             intent.putExtra("festivalIdx",festivalIdx[0])
             startActivity(intent)
-
         }
         binding.llFestival2.setOnClickListener{
             val intent = Intent(context,DetailActivity::class.java)

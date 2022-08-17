@@ -5,9 +5,13 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.content.Context
+import android.content.Intent
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import com.bumptech.glide.Glide
 import com.example.tour.databinding.ItemRecycleCrewBinding
+import com.example.tour.src.home.detail.DetailActivity
+import com.example.tour.src.my.login.MyLoginActivity
 //import com.example.tour.databinding.ItemHeaderBinding
 import kotlin.collections.ArrayList
 
@@ -44,7 +48,11 @@ class MainAdapter(private val dataSet: ArrayList<FewCrew>, private val context: 
             binding.crewDibsCount.text = data.dibsCount.toString() + "명"
 
             binding.crewList.setOnClickListener {
-                Toast.makeText(context,"test",Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context,"test",Toast.LENGTH_SHORT).show()
+                Intent(context, DetailActivity::class.java).apply {
+                    putExtra("data", "data")
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }.run { context. startActivity(this) }
             }
         }
     }

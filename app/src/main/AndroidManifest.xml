@@ -28,11 +28,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".src.chat.room.RoomActivity" android:windowSoftInputMode="adjustUnspecified"/>
-        <activity android:name=".src.home.MainActivity"/>
         <activity android:name=".src.splash.SecondSplashActivity"/>
+
+        <activity android:name=".src.home.MainActivity"/>
         <activity android:name=".src.home.collect.FestivalCollectActivity"/>
         <activity android:name=".src.home.detail.DetailActivity"/>
+
         <activity android:name=".src.crew.make.CrewMakeActivity"/>
+        <activity android:name=".src.crew.crewAttend.model.CrewAttendActivity"/>
+
         <activity android:name=".src.my.login.MyLoginActivity" />
         <activity android:name=".src.my.signup.MySignupActivity" />
         <activity android:name=".src.my.signup.MyLoginSuccessActivity"/>
