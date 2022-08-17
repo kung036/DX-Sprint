@@ -12,7 +12,7 @@ class MainFragmentService(val mainFragmentInterface: MainFragmentInterface) {
     fun tryGetFestivals(serviceKey:String, numOfRows:Int, resultType:String){
         val mainFragmentRetrofitInterface = ApplicationClass.openRetrofit.create(
             MainFragmentRetrofitInterface::class.java)
-        mainFragmentRetrofitInterface.getCrews(serviceKey, numOfRows, resultType).enqueue(object : Callback<GetFestivalResponse> {
+        mainFragmentRetrofitInterface.getFestivals(serviceKey, numOfRows, resultType).enqueue(object : Callback<GetFestivalResponse> {
             override fun onResponse(call: Call<GetFestivalResponse>, response: Response<GetFestivalResponse>) {
                 mainFragmentInterface.onGetFestivalSuccess(response.body() as GetFestivalResponse)
             }

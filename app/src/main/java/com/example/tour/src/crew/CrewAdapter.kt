@@ -1,6 +1,7 @@
 package com.example.tour.src.crew
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.tour.R
 import com.example.tour.databinding.ItemRecycleCrewBinding
-import com.example.tour.src.crew.detail.CrewDetailFragment
+import com.example.tour.src.crew.detail.CrewDetailActivity
 import com.example.tour.src.home.MainActivity
 
 private lateinit var binding : ItemRecycleCrewBinding
@@ -50,12 +51,10 @@ class CrewAdapter(private val dataSet: ArrayList<PopularCrew>, var con : Context
             binding.crewActivityDate.text = data.crewMeetDate
             binding.crewDibsCount.text = data.dibsCount + "명"
             binding.crewList.setOnClickListener {
-                val bundle = Bundle()
-                var detailCrewFragment: Fragment = CrewDetailFragment()
-                bundle.putInt("crewIdx", data.crewIdx)
-                bundle.putString("festivalTitle", titleStr[0].toString())
-                detailCrewFragment.arguments = bundle
-                mainActivity.supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, detailCrewFragment).commit()
+                var intent = Intent(con, CrewDetailActivity::class.java)
+                intent.putExtra("crewIdx", data.crewIdx)
+                intent.putExtra("festivalTitle", titleStr[0].toString())
+                con.startActivity(intent)
             }
         }
 

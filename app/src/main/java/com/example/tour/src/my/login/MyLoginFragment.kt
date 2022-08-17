@@ -52,16 +52,18 @@ class MyLoginFragment : BaseFragment<FragmentMyLoginBinding>
 //        dismissLoadingDialog()
         when (response.message) {
             "요청에 성공하였습니다." -> {
-                showCustomToast("로그인 성공")
-
+                Toast.makeText(context, "로그인 성공", Toast.LENGTH_SHORT).show()
+                var idx = response.result.userNo
 //                ApplicationClass.editor.putString(ApplicationClass.NICKNAME_TOKEN, response.result.userIdx.toString())
                 ApplicationClass.editor.putString(NICKNAME_TOKEN, "닉네임!!")
-                ApplicationClass.editor.commit()
                 ApplicationClass.editor.putString(ApplicationClass.X_ACCESS_TOKEN, response.result.jwt)
-                ApplicationClass.editor.putInt(ApplicationClass.USER_IDX, response.result.userIdx)
+                ApplicationClass.editor.putInt(ApplicationClass.USER_IDX, idx)
                 ApplicationClass.editor.commit()
                 Log.d("jwt",
                     ApplicationClass.sSharedPreferences.getString(ApplicationClass.X_ACCESS_TOKEN,"").toString()
+                )
+                Log.d("userIdx",
+                    ApplicationClass.sSharedPreferences.getInt(ApplicationClass.USER_IDX,0).toString()
                 )
 //                var nickname = ApplicationClass.sSharedPreferences.getString(NICKNAME_TOKEN, "EMPTY")
 //                Log.d("shin", "${nickname}")
@@ -71,7 +73,7 @@ class MyLoginFragment : BaseFragment<FragmentMyLoginBinding>
                 mainActivity.supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MyFragment()).commit()
             }
             else -> {
-                showCustomToast(response.message.toString())
+                Toast.makeText(context, response.message.toString(), Toast.LENGTH_SHORT).show()
             }
         }
     }

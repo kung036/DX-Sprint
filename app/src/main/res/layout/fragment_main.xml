@@ -379,6 +379,43 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:id="@+id/ll_festival5"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="30dp">
+
+                        <ImageView
+                            android:id="@+id/thumbnail_image5"
+                            android:layout_width="130dp"
+                            android:layout_height="143dp"
+                            android:src="@drawable/mask_group_2"
+                            android:scaleType="centerCrop"/>
+
+                        <TextView
+                            android:id="@+id/title5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="망미 트랜스미디어 아트빌리지 축제"
+                            android:layout_marginEnd="15dp"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:id="@+id/date5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2022-08-09 ~ 2022-08-15"
+                            android:maxLines="2"
+                            android:textSize="9sp"
+                            android:textColor="#626262"
+                            android:layout_marginEnd="15dp"/>
+
+                    </LinearLayout>
+
                 </LinearLayout>
 
 

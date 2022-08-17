@@ -10,7 +10,7 @@ import com.example.tour.databinding.ItemDetailParticipateHeadCountBinding
 
 private lateinit var binding : ItemDetailParticipateHeadCountBinding
 private lateinit var footerBinding: ItemDetailCrewHeadCountFooterBinding
-class CrewDetailAdapter(private val dataSet: ArrayList<Perticipate>, var con : Context) :
+class CrewDetailAdapter(private val dataSet: ArrayList<Participate>, var con : Context) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val TYPE_HEADER = 0
@@ -46,7 +46,7 @@ class CrewDetailAdapter(private val dataSet: ArrayList<Perticipate>, var con : C
     }
 
     inner class ViewHolder(private val binding : ItemDetailParticipateHeadCountBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(data : Perticipate){
+        fun bind(data : Participate){
             Glide.with(con).load(data.userProfileImageUrl).into(binding.userProfileImg)
             binding.userNickname.text = data.userNicName
         }

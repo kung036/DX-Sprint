@@ -1,23 +1,21 @@
 package com.example.tour.src.crew.crewAttend.model
 
 
+import android.app.Activity
 import android.graphics.Bitmap
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.tour.R
 import com.example.tour.databinding.ItemRecycleCrewBinding
-//import com.example.tour.databinding.ItemHeaderBinding
-import com.example.tour.src.crew.detail.CrewDetailFragment
+import com.example.tour.src.crew.detail.CrewDetailActivity
 import com.example.tour.util.ImageURLClass
-import com.example.tour.src.home.MainActivity
 import java.net.URL
 import kotlin.collections.ArrayList
 
-//import com.example.tour.src.MyAdapter.HeaderViewHolder
 
 private lateinit var binding: ItemRecycleCrewBinding
 
@@ -70,17 +68,13 @@ class CrewApater_me(
             // 터치했을 때
             binding.crewList.setOnClickListener {
                 // 데이터 전달
-                val bundle = Bundle()
-                var crewAttendDetailFragment: Fragment = CrewDetailFragment()
-                bundle.putString("image_url", data.festivalImageUrl)
-                bundle.putString("festivalTitle", titleStr[0].toString())
-                bundle.putInt("festival_id", data.festivalIdx)
-                bundle.putInt("crewIdx", data.crewIdx)
-                crewAttendDetailFragment.arguments = bundle
-
-                // 화면 전환
-                //mainActivity.supportFragmentManager.beginTransaction()
-                 //   .replace(R.id.framelaout_container, crewAttendDetailFragment).commit()
+                var intent = Intent(context, CrewDetailActivity::class.java)
+                intent.putExtra("image_url", data.festivalImageUrl)
+                intent.putExtra("festivalTitle", titleStr[0].toString())
+                intent.putExtra("festival_id", data.festivalIdx)
+                intent.putExtra("crewIdx", data.crewIdx)
+                context.startActivity(intent)
+                (context as Activity).finish()
             }
         }
     }

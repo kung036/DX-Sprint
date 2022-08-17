@@ -18,6 +18,7 @@ import androidx.core.content.res.TypedArrayUtils.getString
 import androidx.fragment.app.Fragment
 import com.example.tour.R
 import com.example.tour.config.ApplicationClass
+import com.example.tour.config.ApplicationClass.Companion.USER_IDX
 import com.example.tour.config.ApplicationClass.Companion.editor
 import com.example.tour.config.ApplicationClass.Companion.sSharedPreferences
 import com.example.tour.src.home.MainActivity
@@ -66,7 +67,7 @@ class MyFragment : Fragment() {
 //        editor.putString("USER_IDX", "12")
 //        editor.commit()
         Log.d("shin", "${sSharedPreferences.getString("X-ACCESS-TOKEN", "EMPTY")}")
-        Log.d("shin", "${sSharedPreferences.getInt("USER_IDX", 0)}")
+        Log.d("shin", "${sSharedPreferences.getInt(USER_IDX, 0)}")
 
         // 자동 로그인 or 로그인한 경우
 

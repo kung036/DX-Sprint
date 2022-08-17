@@ -273,12 +273,13 @@
             android:layout_marginTop="200dp"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/participate_confirm"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:text="네, 참여할게요"
             android:textSize="10sp"
             android:textColor="@color/black"
-            android:background="@color/pink"
+            android:background="@color/backgroundColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>

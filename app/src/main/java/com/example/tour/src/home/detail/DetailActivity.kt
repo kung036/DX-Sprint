@@ -4,12 +4,10 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import com.example.tour.R
 import com.example.tour.config.BaseActivity
 import com.example.tour.databinding.ActivityMainDetailBinding
+import com.example.tour.src.crew.crewAttend.model.CrewAttendActivity
 import com.example.tour.util.ImageURLClass
-import com.example.tour.src.crew.crewAttend.model.CrewAttendFragment
 import com.example.tour.src.crew.make.CrewMakeActivity
 import java.net.URL
 
@@ -71,14 +69,13 @@ class DetailActivity : BaseActivity<ActivityMainDetailBinding>(ActivityMainDetai
         binding.imageFloatingCrewAttend.setOnClickListener {
             // 데이터 전달
             val bundle = Bundle()
-            var CrewAttendFagment: Fragment = CrewAttendFragment()
-            bundle.putString("image_url", image_url)
-            bundle.putString("title", title)
-            bundle.putString("place", place)
-            bundle.putInt("festivalIdx", festival_id)
-            CrewAttendFagment.arguments = bundle
-
-            supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, CrewAttendFagment).commit()
+            var intent = Intent(this,CrewAttendActivity::class.java)
+            intent.putExtra("image_url", image_url)
+            intent.putExtra("title", title)
+            intent.putExtra("place", place)
+            intent.putExtra("festivalIdx", festival_id)
+            startActivity(intent)
+            finish()
             // 이미지 URL을 Bitmap으로 변경
             var image_task: ImageURLClass = ImageURLClass()
             image_task = ImageURLClass().apply {

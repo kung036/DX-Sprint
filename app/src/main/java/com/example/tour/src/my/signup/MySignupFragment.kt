@@ -77,7 +77,7 @@ class MySignupFragment : BaseFragment<FragmentMySignupBinding>
 //        dismissLoadingDialog()
         when (response.message) {
             "요청에 성공하였습니다." -> {
-                showCustomToast("회원가입 성공")
+                Toast.makeText(context, "회원가입 성공", Toast.LENGTH_SHORT).show()
                 editor.putString(X_ACCESS_TOKEN, response.result.jwt)
                 editor.putInt(USER_IDX, response.result.userIdx)
                 editor.commit()
@@ -98,7 +98,7 @@ class MySignupFragment : BaseFragment<FragmentMySignupBinding>
                 mainActivity.supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, MyLoginFragment()).commit()
             }
             else -> {
-                showCustomToast(response.message.toString())
+                Toast.makeText(context, response.message.toString(), Toast.LENGTH_SHORT).show()
             }
         }
     }

@@ -1,25 +1,23 @@
 package com.example.tour.src.crew.crewAttend.model
 
-import android.content.Context
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tour.R
+import com.example.tour.config.BaseActivity
 import com.example.tour.config.BaseFragment
-import com.example.tour.src.home.MainActivity
 import com.example.tour.databinding.*
 import com.example.tour.util.ImageURLClass
 import com.example.tour.src.crew.crewAttend.CrewAttendFragmentInterface
 import com.example.tour.src.crew.crewAttend.CrewAttendFragmentService
 import java.net.URL
 
-private lateinit var binding: FragmentCrewAttendBinding
 data class CrewFestival(val crewIdx: Int, val festivalIdx: Int, val festivalImageUrl: String, val title: String, val crewName: String,
                         val crewGender: String, val crewHeadCount: Int, val totalHeadCount: Int, val crewMeetDate: String,
                         val dibsCount: String)
-class CrewAttendFragment : BaseFragment<FragmentCrewAttendBinding>
-    (FragmentCrewAttendBinding::bind, R.layout.fragment_crew_attend),
+class CrewAttendActivity: BaseActivity<ActivityCrewAttendBinding>(ActivityCrewAttendBinding::inflate),
     CrewAttendFragmentInterface {
     private lateinit var CAdapter: CrewApater_me
     private val dataSet = arrayListOf<CrewFestival>()
@@ -31,17 +29,12 @@ class CrewAttendFragment : BaseFragment<FragmentCrewAttendBinding>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Apator 내용 받아오기
-        arguments?.let {
-            image_url = it.getString("image_url")
-            title = it.getString("title")
-            place = it.getString("place")
-            festivalIdx = it.getInt("festivalIdx")
-        }
-    }
+        var intent = intent
+        image_url = intent.getStringExtra("image_url")
+        title = intent.getStringExtra("title")
+        place = intent.getStringExtra("place")
+        festivalIdx = intent.getIntExtra("festivalIdx",0)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        // 이미지 URL을 Bitmap으로 변경
         var image_task: ImageURLClass = ImageURLClass()
         image_task = ImageURLClass().apply {
             url = URL(image_url)
@@ -54,11 +47,12 @@ class CrewAttendFragment : BaseFragment<FragmentCrewAttendBinding>
         CrewAttendFragmentService(this).tryGetCrewFestivalDetail(festivalIdx)
 
         // 리사이클러 뷰
-        CAdapter = CrewApater_me(dataSet, requireContext())
+        CAdapter = CrewApater_me(dataSet, this)
         binding.crewAttendRecycler.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.crewAttendRecycler.adapter = CAdapter
     }
+
     override fun onGetCrewByFestivalSuccess(response: GetCrewFestivalRes) {
         var size = response.result.size
         when (response.message) {
@@ -70,15 +64,15 @@ class CrewAttendFragment : BaseFragment<FragmentCrewAttendBinding>
                         response.result[i].dibsCount))
                 }
                 CAdapter.notifyDataSetChanged()
-                CAdapter = CrewApater_me(dataSet, requireContext())
+                CAdapter = CrewApater_me(dataSet, this)
             }
             else -> {
-                showCustomToast(response.message.toString())
+                Toast.makeText(this, response.message.toString(), Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     override fun onGetCrewByFestivalFailure(message: String) {
-        showCustomToast("오류 : $message")
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

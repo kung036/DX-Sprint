@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface MainFragmentRetrofitInterface {
     @GET("getFestivalKr")
-    fun getCrews(@Query("serviceKey") serviceKey:String,
+    fun getFestivals(@Query("serviceKey") serviceKey:String,
                 @Query("numOfRows") numOfRows:Int,
                 @Query("resultType") resultType:String): Call<GetFestivalResponse>
 

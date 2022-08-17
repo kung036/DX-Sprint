@@ -1,27 +1,16 @@
-package com.example.tour.src.crew.crewAttend.model
+package com.example.tour.src.chat
 
 
-import android.graphics.Bitmap
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
-import androidx.core.app.ActivityCompat.startActivityForResult
-import androidx.core.content.ContextCompat.startActivity
-import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.example.tour.R
 import com.example.tour.databinding.ItemChatListBinding
-import com.example.tour.databinding.ItemRecycleCrewBinding
-import com.example.tour.src.chat.ChatList
 import com.example.tour.src.chat.room.RoomActivity
 //import com.example.tour.databinding.ItemHeaderBinding
-import com.example.tour.src.crew.detail.CrewDetailFragment
-import com.example.tour.util.ImageURLClass
 import com.example.tour.src.home.MainActivity
-import java.net.URL
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*

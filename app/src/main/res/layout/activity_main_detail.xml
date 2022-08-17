@@ -154,6 +154,7 @@
                                     android:layout_height="wrap_content"
                                     android:ellipsize="end"
                                     android:text="매년 8월 중순"
+                                    android:maxLines="1"
                                     android:textSize="14sp"
                                     android:textColor="@color/black"
                                     android:layout_marginStart="5dp"

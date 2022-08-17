@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
@@ -132,6 +133,21 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind
             intent.putExtra("festivalIdx",festivalIdx[3])
             startActivity(intent)
         }
+        binding.llFestival5.setOnClickListener{
+            val intent = Intent(context,DetailActivity::class.java)
+            intent.putExtra("image_url",image_url[4])
+            intent.putExtra("title",title[4])
+            intent.putExtra("place",place[4])
+            intent.putExtra("content",content[4])
+            intent.putExtra("date",date[4])
+            intent.putExtra("address",address[4])
+            intent.putExtra("money",money[4])
+            intent.putExtra("phoneNumber",phoneNumber[4])
+            intent.putExtra("homepageURL",homepageURL[4])
+            intent.putExtra("facility",facility[4])
+            intent.putExtra("festivalIdx",festivalIdx[4])
+            startActivity(intent)
+        }
         binding.createCrew.setOnClickListener {
             val intent = Intent(context,CrewMakeActivity::class.java)
             intent.putExtra("title","")
@@ -143,26 +159,49 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind
 
 
     override fun onGetFestivalSuccess(response: GetFestivalResponse) {
-        Glide.with(this).load(response.getFestivalKr.item[0].MAIN_IMG_NORMAL).into(binding.thumbnailImage1)
+
+        Glide.with(this).load("https://firebasestorage.googleapis.com/v0/b/dx-sprint-e06b6.appspot.com/o/banner_festival_find1.png?alt=media&token=baa24218-f159-4c7c-b73f-73783150f4b6").
+                    into(binding.thumbnailImage1)
         var str = response.getFestivalKr.item[0].MAIN_TITLE.split("(")
-        binding.title1.text = str[0].toString()
-        binding.date1.text = response.getFestivalKr.item[0].USAGE_DAY_WEEK_AND_TIME
-        title.add(str[0])
-        Glide.with(this).load(response.getFestivalKr.item[1].MAIN_IMG_NORMAL).into(binding.thumbnailImage2)
-        str = response.getFestivalKr.item[1].MAIN_TITLE.split("(")
+        binding.title1.text = "부산푸드필름페스타"
+        binding.date1.text = "2022.7.1 ~ 2022.7.3"
+        title.add("부산푸드필름페스타")
+
+        Glide.with(this).load(response.getFestivalKr.item[0].MAIN_IMG_NORMAL).into(binding.thumbnailImage2)
+        str = response.getFestivalKr.item[0].MAIN_TITLE.split("(")
         binding.title2.text = str[0].toString()
-        binding.date2.text = response.getFestivalKr.item[1].USAGE_DAY_WEEK_AND_TIME
+        binding.date2.text = response.getFestivalKr.item[0].USAGE_DAY_WEEK_AND_TIME
         title.add(str[0])
-        Glide.with(this).load(response.getFestivalKr.item[2].MAIN_IMG_NORMAL).into(binding.thumbnailImage3)
-        str = response.getFestivalKr.item[2].MAIN_TITLE.split("(")
+
+        Glide.with(this).load(response.getFestivalKr.item[1].MAIN_IMG_NORMAL).into(binding.thumbnailImage3)
+        str = response.getFestivalKr.item[1].MAIN_TITLE.split("(")
         binding.title3.text = str[0].toString()
-        binding.date3.text = response.getFestivalKr.item[2].USAGE_DAY_WEEK_AND_TIME
+        binding.date3.text = response.getFestivalKr.item[1].USAGE_DAY_WEEK_AND_TIME
         title.add(str[0])
-        Glide.with(this).load(response.getFestivalKr.item[3].MAIN_IMG_NORMAL).into(binding.thumbnailImage4)
-        str = response.getFestivalKr.item[3].MAIN_TITLE.split("(")
+
+        Glide.with(this).load(response.getFestivalKr.item[2].MAIN_IMG_NORMAL).into(binding.thumbnailImage4)
+        str = response.getFestivalKr.item[2].MAIN_TITLE.split("(")
         binding.title4.text = str[0].toString()
-        binding.date4.text = response.getFestivalKr.item[3].USAGE_DAY_WEEK_AND_TIME
+        binding.date4.text = response.getFestivalKr.item[2].USAGE_DAY_WEEK_AND_TIME
         title.add(str[0])
+
+        Glide.with(this).load(response.getFestivalKr.item[3].MAIN_IMG_NORMAL).into(binding.thumbnailImage5)
+        str = response.getFestivalKr.item[3].MAIN_TITLE.split("(")
+        binding.title5.text = str[0].toString()
+        binding.date5.text = response.getFestivalKr.item[3].USAGE_DAY_WEEK_AND_TIME
+        title.add(str[0])
+
+        image_url.add("https://firebasestorage.googleapis.com/v0/b/dx-sprint-e06b6.appspot.com/o/banner_festival_find1.png?alt=media&token=baa24218-f159-4c7c-b73f-73783150f4b6")
+        place.add("부산푸드필름페스타")
+        content.add("영화에 음식의 맛을 더한 축제\n음식과 영화를 매개로 한 다양한 컨텐츠\n\"술 마시는 인류\"")
+        date.add("2022. 7. 1. ~ 7. 3.\n" +
+                "프로그램별 상이(홈페이지 참조)")
+        address.add("부산푸드필름페스타")
+        money.add("프로그램별 상이(홈페이지 참조)")
+        phoneNumber.add("051-710-6948")
+        homepageURL.add("https://www.bfff.kr/bbs/content.php?co_id=bfff")
+        facility.add("장애인 전용 관람석, 점자블록, 엘리베이터, 장애인 주차구역, 휠체어접근 가능, 장애인 화장실")
+        festivalIdx.add(3333)
 
         for(i in 0 until 4){
             image_url.add(response.getFestivalKr.item[i].MAIN_IMG_NORMAL)
@@ -187,7 +226,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind
     }
 
     override fun onGetFestivalFailure(message: String) {
-        showCustomToast("오류 : $message")
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun onGetFewCrewSuccess(response: GetCrewRes) {
@@ -207,13 +246,13 @@ class MainFragment : BaseFragment<FragmentMainBinding>(FragmentMainBinding::bind
                 binding.mainViewCrews.adapter = rvAdapter
             }
             else -> {
-                showCustomToast(response.message.toString())
+                Toast.makeText(context, response.message.toString(), Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     override fun onGetFewCrewFailure(message: String) {
-        showCustomToast("오류 : $message")
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
 }

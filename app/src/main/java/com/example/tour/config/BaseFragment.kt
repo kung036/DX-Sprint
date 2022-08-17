@@ -28,9 +28,9 @@ abstract class BaseFragment<B : ViewBinding>(private val bind: (View) -> B, @Lay
         super.onDestroyView()
     }
 
-    fun showCustomToast(message: String) {
-        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
-    }
+//    fun showCustomToast(message: String) {
+//        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
+//    }
 
     fun showLoadingDialog(context: Context) {
         mLoadingDialog = LoadingDialog(context)

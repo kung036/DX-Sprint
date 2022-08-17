@@ -3,6 +3,7 @@ package com.example.tour.src.crew
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tour.src.crew.model.GetCrewRes
 import com.example.tour.config.BaseFragment
@@ -56,12 +57,12 @@ class MainCrewFragment : BaseFragment<FragmentMainCrewEditBinding>
                 rvAdapter = CrewAdapter(data, requireContext(),activity as MainActivity)
             }
             else -> {
-                showCustomToast(response.message.toString())
+                Toast.makeText(context, response.message.toString(), Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     override fun onGetCrewFailure(message: String) {
-        showCustomToast("오류 : $message")
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 }

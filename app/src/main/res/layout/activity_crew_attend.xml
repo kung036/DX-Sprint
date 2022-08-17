@@ -7,17 +7,18 @@
 
     <FrameLayout
         android:id="@+id/festival_card"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/crew_attend_image"
             android:layout_width="match_parent"
             android:layout_height="207dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/festival_image" />
+            android:src="@drawable/banner_festival_find1" />
 
         <ImageButton
             android:layout_width="360dp"

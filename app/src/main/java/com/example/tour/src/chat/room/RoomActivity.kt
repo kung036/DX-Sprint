@@ -45,12 +45,12 @@ class RoomActivity : BaseActivity<ActivityChatRoomBinding>(ActivityChatRoomBindi
         roomIdx = roomIntent.getIntExtra("roomIdx",0)
 
         RoomActivityService(this).tryGetRoomUserList(roomIdx)
-
-        RoomActivityService(this).tryGetRoomChatLog(roomIdx)
         rvAdapter = RoomAdapter(data,this)
         binding.rvChatList.layoutManager = LinearLayoutManager(this,
             LinearLayoutManager.VERTICAL,false)
         binding.rvChatList.adapter = rvAdapter
+        RoomActivityService(this).tryGetRoomChatLog(roomIdx)
+
         binding.chattingRoomIbSend.setOnClickListener {
             if(binding.chattingRoomEtChat.text.isNotEmpty()){
                 var message = binding.chattingRoomEtChat.text
@@ -160,22 +160,48 @@ class RoomActivity : BaseActivity<ActivityChatRoomBinding>(ActivityChatRoomBindi
         when (response.message) {
             "요청에 성공하였습니다." -> {
                 //for(a in 0 until 3) {
-
-                    for (i in 0 until size + 1) {
-                        if (i == 0) {
+                for (i in 0 until size + 1) {
+                    if (i == 0) {
+                        data.add(
+                            Room(
+                                0,
+                                0,
+                                "",
+                                "",
+                                "",
+                                "",
+                                "",
+                                false
+                            )
+                        )
+                    } else if (i == 1) {
+                        data.add(
+                            Room(
+                                response.result[i - 1].roomIdx,
+                                response.result[i - 1].userIdx,
+                                response.result[i - 1].userProfileImageUrl,
+                                response.result[i - 1].userNickName,
+                                response.result[i - 1].type.toString(),
+                                response.result[i - 1].chatContent,
+                                response.result[i - 1].updatedAt,
+                                false
+                            )
+                        )
+                    } else {
+                        if (response.result[i - 1].userIdx == response.result[i - 2].userIdx) {
                             data.add(
                                 Room(
-                                    response.result[i].roomIdx,
-                                    response.result[i].userIdx,
-                                    response.result[i].userProfileImageUrl,
-                                    response.result[i].userNickName,
-                                    response.result[i].type.toString(),
-                                    response.result[i].chatContent,
-                                    response.result[i].updatedAt,
-                                    false
+                                    response.result[i - 1].roomIdx,
+                                    response.result[i - 1].userIdx,
+                                    response.result[i - 1].userProfileImageUrl,
+                                    response.result[i - 1].userNickName,
+                                    response.result[i - 1].type.toString(),
+                                    response.result[i - 1].chatContent,
+                                    response.result[i - 1].updatedAt,
+                                    true
                                 )
                             )
-                        } else if (i == 1) {
+                        } else {
                             data.add(
                                 Room(
                                     response.result[i - 1].roomIdx,
@@ -188,40 +214,16 @@ class RoomActivity : BaseActivity<ActivityChatRoomBinding>(ActivityChatRoomBindi
                                     false
                                 )
                             )
-                        } else {
-                            if (response.result[i - 1].userIdx == response.result[i - 2].userIdx) {
-                                data.add(
-                                    Room(
-                                        response.result[i - 1].roomIdx,
-                                        response.result[i - 1].userIdx,
-                                        response.result[i - 1].userProfileImageUrl,
-                                        response.result[i - 1].userNickName,
-                                        response.result[i - 1].type.toString(),
-                                        response.result[i - 1].chatContent,
-                                        response.result[i - 1].updatedAt,
-                                        true
-                                    )
-                                )
-                            } else {
-                                data.add(
-                                    Room(
-                                        response.result[i - 1].roomIdx,
-                                        response.result[i - 1].userIdx,
-                                        response.result[i - 1].userProfileImageUrl,
-                                        response.result[i - 1].userNickName,
-                                        response.result[i - 1].type.toString(),
-                                        response.result[i - 1].chatContent,
-                                        response.result[i - 1].updatedAt,
-                                        false
-                                    )
-                                )
-                            }
                         }
-
                     }
+
+                }
                 //}
                 rvAdapter.notifyDataSetChanged()
                 rvAdapter = RoomAdapter(data, this)
+                binding.rvChatList.layoutManager = LinearLayoutManager(this,
+                    LinearLayoutManager.VERTICAL,false)
+                binding.rvChatList.adapter = rvAdapter
             }
             else -> {
                 showCustomToast(response.message.toString())

@@ -27,15 +27,14 @@
             android:layout_gravity="center_vertical|center_horizontal"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/crew_make_button"
+            android:id="@+id/crew_collect_see"
             android:layout_width="231dp"
             android:layout_height="47dp"
-            android:background="@drawable/button_round_pink"
+            android:background="@drawable/ripple_solid_20"
             android:layout_marginTop="29dp"
             android:layout_gravity="center"
-            android:text="상세페이지로 이동"
+            android:text="크루 모아보기"
             android:textColor="@color/white"
-            android:textSize="22sp"
-            android:drawableRight="@drawable/icons8_in_24"/>
+            android:textSize="22sp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
