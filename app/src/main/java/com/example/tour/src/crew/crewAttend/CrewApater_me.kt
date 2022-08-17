@@ -1,23 +1,18 @@
-package com.example.tour.src.crew.crewAttend.model
-
+package com.example.tour.src.crew.crewAttend
 
 import android.graphics.Bitmap
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.content.Context
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import com.example.tour.R
+import android.content.Intent
+import android.util.Log
+import android.widget.Toast
 import com.example.tour.databinding.ItemRecycleCrewBinding
-//import com.example.tour.databinding.ItemHeaderBinding
-import com.example.tour.src.crew.detail.CrewDetailFragment
+import com.example.tour.src.crew.detail.CrewAttendDetailActivity
 import com.example.tour.util.ImageURLClass
-import com.example.tour.src.home.MainActivity
 import java.net.URL
 import kotlin.collections.ArrayList
-
-//import com.example.tour.src.MyAdapter.HeaderViewHolder
 
 private lateinit var binding: ItemRecycleCrewBinding
 
@@ -63,25 +58,36 @@ class CrewApater_me(
             binding.crewViewImage.setImageBitmap(bitmap) // String 이미지
             binding.crewName.text = data.crewName
             binding.crewCondition.text = data.crewGender
-            binding.crewHeadCount.text = "${data.crewHeadCount -1}/${data.totalHeadCount}명 참여"
+            binding.crewHeadCount.text = "${data.crewHeadCount - 1}/${data.totalHeadCount}명 참여"
             binding.crewActivityDate.text = data.crewMeetDate
             binding.crewDibsCount.text = data.dibsCount + "명"
 
             // 터치했을 때
             binding.crewList.setOnClickListener {
-                // 데이터 전달
-                val bundle = Bundle()
-                var crewAttendDetailFragment: Fragment = CrewDetailFragment()
-                bundle.putString("image_url", data.festivalImageUrl)
-                bundle.putString("festivalTitle", titleStr[0].toString())
-                bundle.putInt("festival_id", data.festivalIdx)
-                bundle.putInt("crewIdx", data.crewIdx)
-                crewAttendDetailFragment.arguments = bundle
-
-                // 화면 전환
-                //mainActivity.supportFragmentManager.beginTransaction()
-                 //   .replace(R.id.framelaout_container, crewAttendDetailFragment).commit()
+                Intent(context, CrewAttendDetailActivity::class.java).apply {
+                    putExtra("crewName", data.crewName)
+                    putExtra("image_url", data.festivalImageUrl)
+                    putExtra("festivalTitle", titleStr[0].toString())
+                    putExtra("festival_id", data.festivalIdx)
+                    putExtra("crewIdx", data.crewIdx)
+                    putExtra("title", data.title)
+                    Log.d("shin", "crew : "+data.place)
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }.run { context.startActivity(this) }
             }
+
+            // 데이터 전달
+//                val bundle = Bundle()
+//                var crewAttendDetailFragment: Fragment = CrewDetailFragment()
+//                bundle.putString("image_url", data.festivalImageUrl)
+//                bundle.putString("festivalTitle", titleStr[0].toString())
+//                bundle.putInt("festival_id", data.festivalIdx)
+//                bundle.putInt("crewIdx", data.crewIdx)
+//                crewAttendDetailFragment.arguments = bundle
+
+            // 화면 전환
+            //mainActivity.supportFragmentManager.beginTransaction()
+            //   .replace(R.id.framelaout_container, crewAttendDetailFragment).commit()
         }
     }
 }

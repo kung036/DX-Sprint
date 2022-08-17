@@ -11,9 +11,7 @@ import com.example.tour.config.ApplicationClass.Companion.sSharedPreferences
 import com.example.tour.config.BaseFragment
 import com.example.tour.databinding.FragmentChatBinding
 import com.example.tour.src.chat.model.GetChatRoomList
-import com.example.tour.src.crew.crewAttend.CrewAttendFragmentService
 import com.example.tour.src.crew.crewAttend.model.ChatAdapter
-import com.example.tour.src.crew.crewAttend.model.CrewApater_me
 import com.example.tour.src.home.MainActivity
 
 data class ChatList(val crewIdx:Int, val roomIdx:Int, val festivalImageUrl:String,

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.tour.R
 import com.example.tour.databinding.ItemRecycleCrewBinding
-import com.example.tour.src.crew.detail.CrewDetailFragment
+import com.example.tour.src.crew.detail.CrewAttendDetailActivity
 import com.example.tour.src.home.MainActivity
 
 private lateinit var binding : ItemRecycleCrewBinding
@@ -49,13 +49,15 @@ class CrewAdapter(private val dataSet: ArrayList<PopularCrew>, var con : Context
             binding.crewHeadCount.text = "${data.crewHeadCount -1}/${data.totalHeadCount}명 참여"
             binding.crewActivityDate.text = data.crewMeetDate
             binding.crewDibsCount.text = data.dibsCount + "명"
+
+            // 크루 터치 이벤트
             binding.crewList.setOnClickListener {
-                val bundle = Bundle()
-                var detailCrewFragment: Fragment = CrewDetailFragment()
-                bundle.putInt("crewIdx", data.crewIdx)
-                bundle.putString("festivalTitle", titleStr[0].toString())
-                detailCrewFragment.arguments = bundle
-                mainActivity.supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, detailCrewFragment).commit()
+//                val bundle = Bundle()
+//                var detailCrewFragment: Fragment = CrewAttendDetailActivity()
+//                bundle.putInt("crewIdx", data.crewIdx)
+//                bundle.putString("festivalTitle", titleStr[0].toString())
+//                detailCrewFragment.arguments = bundle
+//                mainActivity.supportFragmentManager.beginTransaction().replace(R.id.framelaout_container, detailCrewFragment).commit()
             }
         }
 

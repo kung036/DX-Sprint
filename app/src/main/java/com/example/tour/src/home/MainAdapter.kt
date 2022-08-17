@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import com.bumptech.glide.Glide
 import com.example.tour.databinding.ItemRecycleCrewBinding
+import com.example.tour.src.crew.detail.CrewAttendDetailActivity
+import com.example.tour.src.crew.make.CrewMakeActivity
 import com.example.tour.src.home.detail.DetailActivity
 import com.example.tour.src.my.login.MyLoginActivity
 //import com.example.tour.databinding.ItemHeaderBinding
@@ -46,13 +49,18 @@ class MainAdapter(private val dataSet: ArrayList<FewCrew>, private val context: 
             binding.crewHeadCount.text = "${data.totalHeadCount}명 모집"
             binding.crewActivityDate.text = data.crewMeetDate
             binding.crewDibsCount.text = data.dibsCount.toString() + "명"
+            var titleStr = data.title.split("(")
 
             binding.crewList.setOnClickListener {
-//                Toast.makeText(context,"test",Toast.LENGTH_SHORT).show()
-                Intent(context, DetailActivity::class.java).apply {
-                    putExtra("data", "data")
+                Intent(context, CrewAttendDetailActivity::class.java).apply {
+                    putExtra("crewName", data.crewName)
+                    putExtra("image_url", data.festivalImageUrl)
+                    putExtra("festivalTitle", titleStr[0].toString())
+                    putExtra("festival_id", data.festivalIdx)
+                    putExtra("crewIdx", data.crewIdx)
+                    putExtra("title", data.title)
                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                }.run { context. startActivity(this) }
+                }.run { context.startActivity(this) }
             }
         }
     }

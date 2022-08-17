@@ -18,7 +18,6 @@ import com.example.tour.databinding.ItemRecycleCrewBinding
 import com.example.tour.src.chat.ChatList
 import com.example.tour.src.chat.room.RoomActivity
 //import com.example.tour.databinding.ItemHeaderBinding
-import com.example.tour.src.crew.detail.CrewDetailFragment
 import com.example.tour.util.ImageURLClass
 import com.example.tour.src.home.MainActivity
 import java.net.URL

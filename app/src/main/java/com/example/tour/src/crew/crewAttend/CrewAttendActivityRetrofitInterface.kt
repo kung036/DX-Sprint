@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface CrewAttendFragmentRetrofitInterface {
+interface CrewAttendActivityRetrofitInterface {
     @GET("/crews/festival/{festivalIdx}")
     fun getCrewFestivalDetail(@Path("festivalIdx") festivalIdx : Int): Call<GetCrewFestivalRes>
 

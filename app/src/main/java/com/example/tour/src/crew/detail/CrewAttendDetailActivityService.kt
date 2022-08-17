@@ -6,17 +6,17 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CrewDetailFragmentService(val crewDetailFragmentInterface: CrewDetailFragmentInterface) {
+class CrewAttendDetailActivityService(val crewAttendDetailActivityInterface: CrewAttendDetailActivityInterface) {
     fun tryGetCrewDetail(crewIdx : Int){
         val crewDetailFragmentRetrofitInterface = ApplicationClass.sRetrofit.create(
-            CrewDetailFragmentRetrofitInterface::class.java)
+            CrewAttendDetailactivityRetrofitInterface::class.java)
         crewDetailFragmentRetrofitInterface.getCrewDetail(crewIdx).enqueue(object : Callback<GetCrewDetailRes> {
             override fun onResponse(call: Call<GetCrewDetailRes>, response: Response<GetCrewDetailRes>) {
-                crewDetailFragmentInterface.onGetCrewDetailSuccess(response.body() as GetCrewDetailRes)
+                crewAttendDetailActivityInterface.onGetCrewDetailSuccess(response.body() as GetCrewDetailRes)
             }
 
             override fun onFailure(call: Call<GetCrewDetailRes>, t: Throwable) {
-                crewDetailFragmentInterface.onGetCrewDetailFailure(t.message ?: "통신 오류")
+                crewAttendDetailActivityInterface.onGetCrewDetailFailure(t.message ?: "통신 오류")
             }
         })
     }

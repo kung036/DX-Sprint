@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface CrewDetailFragmentRetrofitInterface {
+interface CrewAttendDetailactivityRetrofitInterface {
     @GET("/crews/detail")
     fun getCrewDetail(@Query("crewIdx") crewIdx : Int): Call<GetCrewDetailRes>
 }

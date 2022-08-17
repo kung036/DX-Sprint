@@ -1,30 +1,27 @@
-package com.example.tour.src.crew.crewAttend.model
+package com.example.tour.src.crew.crewAttend
 
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.view.View
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.tour.R
 import com.example.tour.config.BaseActivity
-import com.example.tour.config.BaseFragment
 import com.example.tour.databinding.*
+import com.example.tour.src.crew.crewAttend.CrewApater_me
 import com.example.tour.util.ImageURLClass
-import com.example.tour.src.crew.crewAttend.CrewAttendFragmentInterface
-import com.example.tour.src.crew.crewAttend.CrewAttendFragmentService
-import com.example.tour.src.my.signup.MySignupActivityInterface
+import com.example.tour.src.crew.crewAttend.CrewAttendActivityInterface
+import com.example.tour.src.crew.crewAttend.CrewAttendActivityService
+import com.example.tour.src.crew.crewAttend.model.GetCrewFestivalRes
 import java.net.URL
 
 //private lateinit var binding: ActivityCrewAttendBinding
 data class CrewFestival(val crewIdx: Int, val festivalIdx: Int, val festivalImageUrl: String, val title: String, val crewName: String,
                         val crewGender: String, val crewHeadCount: Int, val totalHeadCount: Int, val crewMeetDate: String,
-                        val dibsCount: String)
+                        val dibsCount: String, val place: String?)
 
 //class CrewAttendActivity : BaseFragment<ActivityCrewAttendBinding>
 //    (ActivityCrewAttendBinding::bind, R.layout.activity_crew_attend),
 //    CrewAttendFragmentInterface {
 class CrewAttendActivity : BaseActivity<ActivityCrewAttendBinding>
-        (ActivityCrewAttendBinding::inflate), CrewAttendFragmentInterface {
+        (ActivityCrewAttendBinding::inflate), CrewAttendActivityInterface {
 
     private lateinit var CAdapter: CrewApater_me
     private val dataSet = arrayListOf<CrewFestival>()
@@ -52,7 +49,7 @@ class CrewAttendActivity : BaseActivity<ActivityCrewAttendBinding>
         binding.crewAttendTitle.text = title
         binding.crewAttendPlace.text = place
 
-        CrewAttendFragmentService(this).tryGetCrewFestivalDetail(festivalIdx)
+        CrewAttendActivityService(this).tryGetCrewFestivalDetail(festivalIdx)
 
         // 리사이클러 뷰
         CAdapter = CrewApater_me(dataSet, this)
@@ -70,7 +67,7 @@ class CrewAttendActivity : BaseActivity<ActivityCrewAttendBinding>
                     dataSet.add(CrewFestival(response.result[i].crewIdx,response.result[i].festivalIdx, response.result[i].festivalImageUrl,
                         response.result[i].title, response.result[i].crewName, response.result[i].crewGender,
                         response.result[i].crewHeadCount,response.result[i].totalHeadCount, response.result[i].crewMeetDate,
-                        response.result[i].dibsCount))
+                        response.result[i].dibsCount, place))
                 }
                 CAdapter.notifyDataSetChanged()
                 CAdapter = CrewApater_me(dataSet, this)

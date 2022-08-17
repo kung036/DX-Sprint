@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.tour.R
 import com.example.tour.config.BaseActivity
 import com.example.tour.databinding.ActivityMainDetailBinding
-import com.example.tour.src.crew.crewAttend.model.CrewAttendActivity
+import com.example.tour.src.crew.crewAttend.CrewAttendActivity
 import com.example.tour.util.ImageURLClass
 import com.example.tour.src.crew.make.CrewMakeActivity
 import java.net.URL
@@ -67,11 +67,10 @@ class DetailActivity : BaseActivity<ActivityMainDetailBinding>(ActivityMainDetai
             intent.putExtra("title",title)
             startActivity(intent)
         }
-        // 크루 참석하기
+        // 크루 들어가기
         binding.imageFloatingCrewAttend.setOnClickListener {
-            // 데이터 전달
-            val intent = Intent(this,CrewAttendActivity::class.java)
-            intent.putExtra("title",title)
+            // 데이터 전달 - 액티비티
+            val intent = Intent(this, CrewAttendActivity::class.java)
             intent.putExtra("image_url", image_url)
             intent.putExtra("title", title)
             intent.putExtra("place", place)

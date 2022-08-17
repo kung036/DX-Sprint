@@ -35,7 +35,8 @@
         <activity android:name=".src.home.detail.DetailActivity"/>
 
         <activity android:name=".src.crew.make.CrewMakeActivity"/>
-        <activity android:name=".src.crew.crewAttend.model.CrewAttendActivity"/>
+        <activity android:name=".src.crew.crewAttend.CrewAttendActivity"/>
+        <activity android:name=".src.crew.detail.CrewAttendDetailActivity" />
 
         <activity android:name=".src.my.login.MyLoginActivity" />
         <activity android:name=".src.my.signup.MySignupActivity" />
