@@ -63,6 +63,7 @@
             android:layout_marginLeft="45dp"
             android:layout_marginRight="45dp"
             android:layout_marginTop="10dp"
+            android:text="babo5@naver.com"
             android:hint="이메일을 입력해주세요."
             android:textColor="@color/black"
             android:textSize="17sp" />
@@ -72,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="45dp"
             android:layout_marginTop="23dp"
-            android:text="비밀번호"
+            android:text="비밀번호 "
             android:textColor="@color/black"
             android:textSize="15sp" />
 
@@ -83,6 +84,7 @@
             android:layout_marginLeft="45dp"
             android:layout_marginRight="45dp"
             android:layout_marginTop="10dp"
+            android:text="12ciej!!2"
             android:inputType="textPassword"
             android:textColor="@color/black"
             android:textSize="17sp" />
@@ -102,25 +104,25 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_marginLeft="57dp"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:text="비밀번호를 잊어버리셨나요?"-->
-<!--                android:textAlignment="center"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="12sp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_marginLeft="57dp"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                android:text="비밀번호를 잊어버리셨나요?"-->
+            <!--                android:textAlignment="center"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="12sp" />-->
 
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:layout_marginLeft="5dp"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:text="비밀번호 재설정"-->
-<!--                android:textAlignment="center"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="12sp" />-->
+            <!--            <TextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_marginLeft="5dp"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                android:text="비밀번호 재설정"-->
+            <!--                android:textAlignment="center"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="12sp" />-->
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton

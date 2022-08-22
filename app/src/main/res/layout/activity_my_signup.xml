@@ -88,6 +88,7 @@
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="5dp"
                 android:hint="abcdefg@naver.com"
+                android:text="babo5@naver.com"
                 android:textColor="#737070"
                 android:textSize="15sp" />
 
@@ -108,6 +109,7 @@
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="5dp"
                 android:hint="영문, 숫자, 특수문자 포함 8~14자리"
+                android:text="12ciej!!2"
                 android:inputType="textPassword"
                 android:textColor="#737070"
                 android:textSize="15sp" />
@@ -130,6 +132,7 @@
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="5dp"
                 android:hint="비밀번호를 다시 입력하세요."
+                android:text="12ciej!!2"
                 android:inputType="textPassword"
                 android:textColor="#737070"
                 android:textSize="15sp" />
@@ -151,6 +154,7 @@
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="5dp"
                 android:hint="010-0000-0000"
+                android:text="010-1234-0033"
                 android:textColor="#737070"
                 android:textSize="15sp" />
 
@@ -171,6 +175,7 @@
                 android:layout_marginRight="45dp"
                 android:layout_marginTop="5dp"
                 android:hint="2~6글자"
+                android:text="Test3"
                 android:textColor="#737070"
                 android:textSize="15sp"/>
 
