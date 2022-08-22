@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".src.MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--  베너  -->
+            <ImageView
+                android:id="@+id/main_image_vener"
+                android:layout_width="match_parent"
+                android:layout_height="281dp"
+                android:src="@drawable/festival_image1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/main_image_vener"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="40dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginStart="30dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:cardCornerRadius="35dp"
+                        android:background="#FF8888"
+                        android:backgroundTint="#FF8888"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/bx_camera_movie"
+                            android:scaleType="center"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="영화"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="9dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:cardCornerRadius="35dp"
+                        android:background="#FF8888"
+                        android:backgroundTint="#FF8888"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/akar_icons_music"
+                            android:scaleType="center"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="음악"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="9dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:cardCornerRadius="35dp"
+                        android:background="#FF8888"
+                        android:backgroundTint="#FF8888"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/emojione_monotone_party_popper"
+                            android:scaleType="center"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="문화"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="9dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:cardCornerRadius="35dp"
+                        android:background="#FF8888"
+                        android:backgroundTint="#FF8888"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/fluent_balloon_12_regular"
+                            android:scaleType="center"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가족"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="9dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_rec_festival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="추천 페스티벌"
+                app:layout_constraintTop_toBottomOf="@id/category"
+                app:layout_constraintStart_toStartOf="parent"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="33dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginStart="30dp"/>
+
+            <HorizontalScrollView
+                android:id="@+id/rec_festival_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_rec_festival"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:scrollbarSize="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="30dp">
+
+                    <LinearLayout
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="30dp">
+
+                        <ImageView
+                            android:layout_width="130dp"
+                            android:layout_height="143dp"
+                            android:src="@drawable/mask_group_3"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="2022년 부산 여행영화제"
+                            android:layout_marginEnd="15dp"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2022-08-05 ~ 2022-08-07"
+                            android:maxLines="2"
+                            android:textSize="9sp"
+                            android:textColor="#626262"
+                            android:layout_marginEnd="15dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="30dp">
+
+                        <ImageView
+                            android:layout_width="130dp"
+                            android:layout_height="143dp"
+                            android:src="@drawable/mask_group_2"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="망미 트랜스미디어 아트빌리지 축제"
+                            android:layout_marginEnd="15dp"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2022-08-09 ~ 2022-08-15"
+                            android:maxLines="2"
+                            android:textSize="9sp"
+                            android:textColor="#626262"
+                            android:layout_marginEnd="15dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="30dp">
+
+                        <ImageView
+                            android:layout_width="130dp"
+                            android:layout_height="143dp"
+                            android:src="@drawable/mask_group_1"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="부산에 살면서 부산에 있으면서 해양레포츠 하나씩은 즐겨야지"
+                            android:layout_marginEnd="15dp"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2022-07-15 ~ 2022-08-30"
+                            android:maxLines="2"
+                            android:textSize="9sp"
+                            android:textColor="#626262"
+                            android:layout_marginEnd="15dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/tv_month_pic"
+                android:text="이달의 Hot Pick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/rec_festival_scroll"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="30dp"/>
+
+
+            <!--  리사이클링 뷰  -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_view_festival"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_month_pic"
+                android:layout_marginTop="48dp"
+                android:overScrollMode="never"/>
+
+            <ImageView
+                android:id="@+id/more_arrow"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:src="@drawable/arrow_bottom"
+                app:layout_constraintTop_toBottomOf="@id/main_view_festival"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="22dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                app:layout_constraintTop_toBottomOf="@id/more_arrow"
+                android:background="@drawable/button_round_pink_25"
+                android:layout_marginTop="23dp"
+                android:text="더보기"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="45dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

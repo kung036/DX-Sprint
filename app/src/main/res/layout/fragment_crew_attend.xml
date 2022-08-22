@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/festival_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/crew_attend_image"
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/festival_image" />
+
+        <ImageButton
+            android:layout_width="360dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_round_dark"
+            android:paddingTop="30dp" />
+
+        <TextView
+            android:id="@+id/crew_attend_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="37dp"
+            android:layout_marginTop="175dp"
+            android:text="API 제목"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/crew_attend_place"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="165dp"
+            android:layout_marginTop="220dp"
+            android:text="API 주요장소"
+            android:textAlignment="textEnd"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
+    </FrameLayout>
+
+    <!-- 갯수 정해진만큼 뷰로 표시하기 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/crew_attend_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/festival_card"
+        android:layout_marginTop="40dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

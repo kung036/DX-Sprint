@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".src.main.MainActivity">
+
+    <ImageView
+        android:id="@+id/thumbnail_image"
+        android:layout_width="0dp"
+        android:layout_height="207dp"
+        app:layout_constraintHeight_percent="0.15"
+        android:background="#d9d9d9"
+        android:text='API 이미지 URL'
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/festival_card"
+        android:layout_width="310dp"
+        android:layout_height="72dp"
+        app:layout_constraintHeight_percent="0.08"
+        android:background="@drawable/button_round"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thumbnail_image"
+        app:layout_constraintBottom_toBottomOf="@id/thumbnail_image"
+        app:layout_constraintWidth_percent="0.8"
+        android:elevation="0dp"/>
+
+    <!-- 갯수 정해진만큼 뷰로 표시하기 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/popular_crew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/festival_card"
+        android:layout_marginTop="40dp"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
