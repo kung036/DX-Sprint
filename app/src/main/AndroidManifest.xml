@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tour">
+    <!-- API -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".config.ApplicationClass"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Tour"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".src.search.FindActivity"
+            android:label="@string/title_activity_find"
+            android:theme="@style/Theme.Tour.NoActionBar" />
+        <activity
+            android:name=".src.splash.FirstSplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".src.chat.room.RoomActivity" android:windowSoftInputMode="adjustUnspecified"/>
+        <activity android:name=".src.splash.SecondSplashActivity"/>
+
+        <activity android:name=".src.home.MainActivity"/>
+        <activity android:name=".src.home.collect.FestivalCollectActivity"/>
+        <activity android:name=".src.home.detail.DetailActivity"/>
+
+        <activity android:name=".src.crew.make.CrewMakeActivity"/>
+        <activity android:name=".src.crew.crewAttend.CrewAttendActivity"/>
+        <activity android:name=".src.home.allCrew.AllCrewActivity"/>
+
+        <activity android:name=".src.my.login.MyLoginActivity" />
+        <activity android:name=".src.my.signup.MySignupActivity" />
+        <activity android:name=".src.my.signup.MyLoginSuccessActivity"/>
+
+        <activity android:name=".src.crew.make.AgeSelectActivity"/>
+        <activity android:name=".src.crew.make.GenderSelectActivity"/>
+        <activity android:name=".src.crew.make.finish.CrewMakeFinishActivity"/>
+        <activity android:name=".src.crew.detail.CrewDetailActivity"/>
+    </application>
+
+</manifest>

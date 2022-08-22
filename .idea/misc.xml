@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/drawable/my_chatting_bubble.xml" value="0.2205" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/drawable/others_chatting_bubble.xml" value="0.2205" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/drawable/ripple_solid_outline_send_btn_10.xml" value="0.2205" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/drawable/stroke_chatting_et.xml" value="0.2205" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/drawable/stroke_chatting_et2.xml" value="0.2205" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/drawable/stroke_send_button.xml" value="0.2205" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/drawable/tv_outside_stroke_age_input.xml" value="0.2205" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/layout/activity_chat_room.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/layout/activity_crew_attend.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/layout/activity_crew_attend_detail.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/layout/activity_main.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/layout/fragment_chat.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/layout/fragment_main.xml" value="0.35435897435897434" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/layout/item_chat_bubble.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/layout/item_chat_list.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/DX-Sprint-Ver.2/app/src/main/res/layout/item_header_room_chat_time.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/dibs_stroke_5.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/ripple_black_outline_10.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/ripple_no_outline_blue_20.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/ripple_normal_outline_10.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/ripple_outline_10.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/ripple_outline_20.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/ripple_outline_5.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/ripple_solid_10.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/ripple_solid_5.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/stroke_banner_20.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/stroke_banner_content_10.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/stroke_blue_white_20.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/stroke_festival_detail_5.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable-v24/stroke_outline_20.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/background_white_20.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/bottom_sheet_calender_round.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/button_round.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/button_round_dark.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/dibs_stroke_5.xml" value="0.2205" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/menu_select_color_main_btn.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/my_chatting_bubble.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/others_chatting_bubble.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/ripple_no_outline_20.xml" value="0.173" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/ripple_normal_outline_10.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/ripple_outline_20.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/ripple_stroke_outline_20.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/stroke_banner_20.xml" value="0.173" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/stroke_banner_content_10.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/stroke_chatting_et.xml" value="0.191" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/text_outline_banner.xml" value="0.218" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/tv_outside_stroke_age_input.xml" value="0.2205" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/drawable/tv_outside_stroke_black.xml" value="0.2205" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_age_select.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_chat_room.xml" value="0.35435897435897434" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_crew_attend.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_crew_attend_detail.xml" value="0.33" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_crew_make.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_festival_collect.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_find.xml" value="0.1828125" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_first_splash.xml" value="0.5" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_main.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_main_detail.xml" value="0.35435897435897434" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/activity_second_splash.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/dialog_loading.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_bottom_sheet_date.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_bottom_sheet_festival_name.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_bottom_sheet_time.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_chat.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_crew_attend.xml" value="0.1828125" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_crew_attend_detail.xml" value="0.25" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_crew_make.xml" value="0.33" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_crew_make_finish.xml" value="0.33" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_detail.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_first.xml" value="0.1828125" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_main.xml" value="0.21169036334913113" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_main_crew_edit.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_main_detail.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_my.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_my_authcode_edit.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_my_email_sign_up_edit.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_my_input_new_password_edit.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_my_login.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_my_setting.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_my_setting_password_edit.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_my_sign_up.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_my_signup.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_mypage.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_recycle_crew.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_recycle_main.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_second.xml" value="0.1828125" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/fragment_test.xml" value="0.1828125" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/item_chat_bubble.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/item_chat_list.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/item_detail_crew_head_count_footer.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/item_detail_participate_head_count.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/item_festival_collect.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/item_header_room_chat_time.xml" value="0.35885416666666664" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/item_recycle_crew.xml" value="0.33" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/layout/item_recycle_main.xml" value="0.35989583333333336" />
+        <entry key="..\:/Users/0529y/Desktop/android/tour/app/src/main/res/menu/navi_menu.xml" value="0.35989583333333336" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

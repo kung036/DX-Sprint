@@ -1,0 +1,119 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_view_layout">
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:id="@+id/festivals">
+
+            <ImageView
+                android:id="@+id/main_view_image"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:src="@drawable/festival_image1"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/main_view_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="90dp"
+                android:fontFamily="@font/netmarble_m"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:text="낙동강 구포 나루 축제"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_view_image" />
+            
+            <ImageView
+                android:id="@+id/ib_main_view_place"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/icons8_address_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_view_title"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"/>
+
+            <TextView
+                android:id="@+id/main_view_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="부산 진구"
+                android:fontFamily="@font/netmarble_l"
+                android:textColor="#000000"
+                android:layout_marginStart="5dp"
+                android:textSize="13sp"
+                app:layout_constraintTop_toTopOf="@id/ib_main_view_place"
+                app:layout_constraintStart_toEndOf="@id/ib_main_view_place"/>
+
+            <ImageView
+                android:id="@+id/ib_main_view_date"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/icons8_date_67"
+                app:layout_constraintStart_toStartOf="@id/ib_main_view_place"
+                app:layout_constraintTop_toBottomOf="@id/ib_main_view_place"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/main_view_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="2022-07-08 ~ 2022-07-15 "
+                android:fontFamily="@font/netmarble_l"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintTop_toTopOf="@id/ib_main_view_date"
+                app:layout_constraintStart_toEndOf="@id/ib_main_view_date"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="90dp"
+                android:layout_marginStart="5dp"/>
+
+            <TextView
+                android:id="@+id/detail_see"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="자세히 보기 >"
+                android:textColor="#000000"
+                android:textSize="13sp"
+                app:layout_constraintTop_toTopOf="@id/main_view_title"
+                app:layout_constraintStart_toEndOf="@id/main_view_title"
+                app:layout_constraintBottom_toBottomOf="@id/main_view_title"
+                android:layout_marginStart="5dp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
